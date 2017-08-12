@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E0B5AF031B398A6EAF74D11 /* libPods-Votem ExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E6C07086096FC4ABCCA86A /* libPods-Votem ExampleTests.a */; };
+		9A48DC33C0DCE803145CBD92 /* libPods-Votem Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */; };
+		C984EE221F3F92A100B9C832 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE211F3F92A100B9C832 /* main.m */; };
+		C984EE251F3F92A100B9C832 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE241F3F92A100B9C832 /* AppDelegate.m */; };
+		C984EE281F3F92A100B9C832 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE271F3F92A100B9C832 /* ViewController.m */; };
+		C984EE2B1F3F92A100B9C832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C984EE291F3F92A100B9C832 /* Main.storyboard */; };
+		C984EE2E1F3F92A100B9C832 /* Votem_Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C984EE2C1F3F92A100B9C832 /* Votem_Example.xcdatamodeld */; };
+		C984EE301F3F92A100B9C832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C984EE2F1F3F92A100B9C832 /* Assets.xcassets */; };
+		C984EE331F3F92A100B9C832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C984EE311F3F92A100B9C832 /* LaunchScreen.storyboard */; };
+		C984EE3E1F3F92A100B9C832 /* Votem_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE3D1F3F92A100B9C832 /* Votem_ExampleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C984EE3A1F3F92A100B9C832 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C984EE151F3F92A000B9C832 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C984EE1C1F3F92A000B9C832;
+			remoteInfo = "Votem Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02E6C07086096FC4ABCCA86A /* libPods-Votem ExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem ExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		083EB4705BB371FEDFEBD9FE /* Pods-Votem ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem ExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem ExampleTests/Pods-Votem ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		C984EE1D1F3F92A100B9C832 /* Votem Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Votem Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C984EE211F3F92A100B9C832 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C984EE231F3F92A100B9C832 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C984EE241F3F92A100B9C832 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C984EE261F3F92A100B9C832 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C984EE271F3F92A100B9C832 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C984EE2A1F3F92A100B9C832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C984EE2D1F3F92A100B9C832 /* Votem_Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Votem_Example.xcdatamodel; sourceTree = "<group>"; };
+		C984EE2F1F3F92A100B9C832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C984EE321F3F92A100B9C832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C984EE341F3F92A100B9C832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C984EE391F3F92A100B9C832 /* Votem ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Votem ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C984EE3D1F3F92A100B9C832 /* Votem_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Votem_ExampleTests.m; sourceTree = "<group>"; };
+		C984EE3F1F3F92A100B9C832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
+		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECDB438971C0A1263CD10078 /* Pods-Votem ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem ExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem ExampleTests/Pods-Votem ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C984EE1A1F3F92A000B9C832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A48DC33C0DCE803145CBD92 /* libPods-Votem Example.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984EE361F3F92A100B9C832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0B5AF031B398A6EAF74D11 /* libPods-Votem ExampleTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C984EE141F3F92A000B9C832 = {
+			isa = PBXGroup;
+			children = (
+				C984EE1F1F3F92A100B9C832 /* Votem Example */,
+				C984EE3C1F3F92A100B9C832 /* Votem ExampleTests */,
+				C984EE1E1F3F92A100B9C832 /* Products */,
+				F186437919E0B58C7D0429A9 /* Pods */,
+				E904E517FADF24EA1438AD80 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C984EE1E1F3F92A100B9C832 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C984EE1D1F3F92A100B9C832 /* Votem Example.app */,
+				C984EE391F3F92A100B9C832 /* Votem ExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C984EE1F1F3F92A100B9C832 /* Votem Example */ = {
+			isa = PBXGroup;
+			children = (
+				C984EE231F3F92A100B9C832 /* AppDelegate.h */,
+				C984EE241F3F92A100B9C832 /* AppDelegate.m */,
+				C984EE261F3F92A100B9C832 /* ViewController.h */,
+				C984EE271F3F92A100B9C832 /* ViewController.m */,
+				C984EE291F3F92A100B9C832 /* Main.storyboard */,
+				C984EE2F1F3F92A100B9C832 /* Assets.xcassets */,
+				C984EE311F3F92A100B9C832 /* LaunchScreen.storyboard */,
+				C984EE341F3F92A100B9C832 /* Info.plist */,
+				C984EE2C1F3F92A100B9C832 /* Votem_Example.xcdatamodeld */,
+				C984EE201F3F92A100B9C832 /* Supporting Files */,
+			);
+			path = "Votem Example";
+			sourceTree = "<group>";
+		};
+		C984EE201F3F92A100B9C832 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C984EE211F3F92A100B9C832 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C984EE3C1F3F92A100B9C832 /* Votem ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				C984EE3D1F3F92A100B9C832 /* Votem_ExampleTests.m */,
+				C984EE3F1F3F92A100B9C832 /* Info.plist */,
+			);
+			path = "Votem ExampleTests";
+			sourceTree = "<group>";
+		};
+		E904E517FADF24EA1438AD80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */,
+				02E6C07086096FC4ABCCA86A /* libPods-Votem ExampleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F186437919E0B58C7D0429A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */,
+				D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */,
+				ECDB438971C0A1263CD10078 /* Pods-Votem ExampleTests.debug.xcconfig */,
+				083EB4705BB371FEDFEBD9FE /* Pods-Votem ExampleTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C984EE1C1F3F92A000B9C832 /* Votem Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C984EE421F3F92A100B9C832 /* Build configuration list for PBXNativeTarget "Votem Example" */;
+			buildPhases = (
+				BBFF6318FDF780DA04314E01 /* [CP] Check Pods Manifest.lock */,
+				C984EE191F3F92A000B9C832 /* Sources */,
+				C984EE1A1F3F92A000B9C832 /* Frameworks */,
+				C984EE1B1F3F92A000B9C832 /* Resources */,
+				16D3F496FED17FF61052594E /* [CP] Embed Pods Frameworks */,
+				A96FB41E55E9D2EE6C61F4CF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Votem Example";
+			productName = "Votem Example";
+			productReference = C984EE1D1F3F92A100B9C832 /* Votem Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C984EE381F3F92A100B9C832 /* Votem ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C984EE451F3F92A100B9C832 /* Build configuration list for PBXNativeTarget "Votem ExampleTests" */;
+			buildPhases = (
+				B6B0428BCAC7C962BD29CDA7 /* [CP] Check Pods Manifest.lock */,
+				C984EE351F3F92A100B9C832 /* Sources */,
+				C984EE361F3F92A100B9C832 /* Frameworks */,
+				C984EE371F3F92A100B9C832 /* Resources */,
+				004A0CE30E26EC135475B1C8 /* [CP] Embed Pods Frameworks */,
+				44A3166875A80E80E864A08E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C984EE3B1F3F92A100B9C832 /* PBXTargetDependency */,
+			);
+			name = "Votem ExampleTests";
+			productName = "Votem ExampleTests";
+			productReference = C984EE391F3F92A100B9C832 /* Votem ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C984EE151F3F92A000B9C832 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Matt S Becker";
+				TargetAttributes = {
+					C984EE1C1F3F92A000B9C832 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2JUZD3ZDTY;
+						ProvisioningStyle = Automatic;
+					};
+					C984EE381F3F92A100B9C832 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2JUZD3ZDTY;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C984EE1C1F3F92A000B9C832;
+					};
+				};
+			};
+			buildConfigurationList = C984EE181F3F92A000B9C832 /* Build configuration list for PBXProject "Votem Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C984EE141F3F92A000B9C832;
+			productRefGroup = C984EE1E1F3F92A100B9C832 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C984EE1C1F3F92A000B9C832 /* Votem Example */,
+				C984EE381F3F92A100B9C832 /* Votem ExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C984EE1B1F3F92A000B9C832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C984EE331F3F92A100B9C832 /* LaunchScreen.storyboard in Resources */,
+				C984EE301F3F92A100B9C832 /* Assets.xcassets in Resources */,
+				C984EE2B1F3F92A100B9C832 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984EE371F3F92A100B9C832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		004A0CE30E26EC135475B1C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Votem ExampleTests/Pods-Votem ExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16D3F496FED17FF61052594E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44A3166875A80E80E864A08E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Votem ExampleTests/Pods-Votem ExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A96FB41E55E9D2EE6C61F4CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6B0428BCAC7C962BD29CDA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BBFF6318FDF780DA04314E01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C984EE191F3F92A000B9C832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C984EE2E1F3F92A100B9C832 /* Votem_Example.xcdatamodeld in Sources */,
+				C984EE281F3F92A100B9C832 /* ViewController.m in Sources */,
+				C984EE251F3F92A100B9C832 /* AppDelegate.m in Sources */,
+				C984EE221F3F92A100B9C832 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C984EE351F3F92A100B9C832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C984EE3E1F3F92A100B9C832 /* Votem_ExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C984EE3B1F3F92A100B9C832 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C984EE1C1F3F92A000B9C832 /* Votem Example */;
+			targetProxy = C984EE3A1F3F92A100B9C832 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C984EE291F3F92A100B9C832 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C984EE2A1F3F92A100B9C832 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C984EE311F3F92A100B9C832 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C984EE321F3F92A100B9C832 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C984EE401F3F92A100B9C832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C984EE411F3F92A100B9C832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C984EE431F3F92A100B9C832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2JUZD3ZDTY;
+				INFOPLIST_FILE = "Votem Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattsbecker.Votem-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C984EE441F3F92A100B9C832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2JUZD3ZDTY;
+				INFOPLIST_FILE = "Votem Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattsbecker.Votem-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C984EE461F3F92A100B9C832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECDB438971C0A1263CD10078 /* Pods-Votem ExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2JUZD3ZDTY;
+				INFOPLIST_FILE = "Votem ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattsbecker.Votem-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Votem Example.app/Votem Example";
+			};
+			name = Debug;
+		};
+		C984EE471F3F92A100B9C832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 083EB4705BB371FEDFEBD9FE /* Pods-Votem ExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2JUZD3ZDTY;
+				INFOPLIST_FILE = "Votem ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mattsbecker.Votem-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Votem Example.app/Votem Example";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C984EE181F3F92A000B9C832 /* Build configuration list for PBXProject "Votem Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984EE401F3F92A100B9C832 /* Debug */,
+				C984EE411F3F92A100B9C832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C984EE421F3F92A100B9C832 /* Build configuration list for PBXNativeTarget "Votem Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984EE431F3F92A100B9C832 /* Debug */,
+				C984EE441F3F92A100B9C832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C984EE451F3F92A100B9C832 /* Build configuration list for PBXNativeTarget "Votem ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C984EE461F3F92A100B9C832 /* Debug */,
+				C984EE471F3F92A100B9C832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C984EE2C1F3F92A100B9C832 /* Votem_Example.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C984EE2D1F3F92A100B9C832 /* Votem_Example.xcdatamodel */,
+			);
+			currentVersion = C984EE2D1F3F92A100B9C832 /* Votem_Example.xcdatamodel */;
+			path = Votem_Example.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C984EE151F3F92A000B9C832 /* Project object */;
+}
