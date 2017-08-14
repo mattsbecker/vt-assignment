@@ -17,5 +17,9 @@ target 'Votem Example' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
+  post_install do |installer|
+    require 'fileutils'
+    FileUtils.cp_r('Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example-acknowledgements.plist', 'Votem Example/Settings.bundle/Acknowledgements.plist', :remove_destination => true)
+  end
 end

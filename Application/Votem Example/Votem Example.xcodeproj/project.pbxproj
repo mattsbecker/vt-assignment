@@ -17,6 +17,7 @@
 		C984EE301F3F92A100B9C832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C984EE2F1F3F92A100B9C832 /* Assets.xcassets */; };
 		C984EE331F3F92A100B9C832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C984EE311F3F92A100B9C832 /* LaunchScreen.storyboard */; };
 		C984EE3E1F3F92A100B9C832 /* Votem_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE3D1F3F92A100B9C832 /* Votem_ExampleTests.m */; };
+		C984EE491F413F7D00B9C832 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C984EE481F413F7D00B9C832 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		C984EE391F3F92A100B9C832 /* Votem ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Votem ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C984EE3D1F3F92A100B9C832 /* Votem_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Votem_ExampleTests.m; sourceTree = "<group>"; };
 		C984EE3F1F3F92A100B9C832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C984EE481F413F7D00B9C832 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				C984EE341F3F92A100B9C832 /* Info.plist */,
 				C984EE2C1F3F92A100B9C832 /* Votem_Example.xcdatamodeld */,
 				C984EE201F3F92A100B9C832 /* Supporting Files */,
+				C984EE481F413F7D00B9C832 /* Settings.bundle */,
 			);
 			path = "Votem Example";
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C984EE491F413F7D00B9C832 /* Settings.bundle in Resources */,
 				C984EE331F3F92A100B9C832 /* LaunchScreen.storyboard in Resources */,
 				C984EE301F3F92A100B9C832 /* Assets.xcassets in Resources */,
 				C984EE2B1F3F92A100B9C832 /* Main.storyboard in Resources */,
@@ -563,6 +567,7 @@
 				C984EE441F3F92A100B9C832 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C984EE451F3F92A100B9C832 /* Build configuration list for PBXNativeTarget "Votem ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +576,7 @@
 				C984EE471F3F92A100B9C832 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
