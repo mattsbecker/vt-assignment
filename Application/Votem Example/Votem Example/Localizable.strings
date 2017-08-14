@@ -1,0 +1,30 @@
+/* 
+  Localized.strings
+  Votem Example
+
+  Created by Matt on 8/14/17.
+  Copyright © 2017 Matt S Becker. All rights reserved.
+*/
+
+"ONBOARDING.LOGIN_TITLE" = "Sign in to your secure account";
+"ONBOARDING.LOGIN_ACCOUNT_ID_FIELD_PLACEHOLDER" = "Your Account ID";
+"ONBOARDING.ACCOUNT_ID_FOOTNOTE" = "Your Account ID has been sent to your email address and looks like: 1122-3344-5566...";
+"ONBOARDING.LOGIN_PASSWORD_FIELD_PLACEHOLDER" = "Your Account Password";
+"ONBOARDING.SIGN_IN_BUTTON" = "Sign In";
+"ONBOARDING.CREATE_NEW_ACCOUNT_BUTTON" = "Create your account";
+"ONBOARDING.CREATE_ACCOUNT_TITLE" = "Create Your Account";
+"ONBOARDING.CREATE_ACCOUNT_EMAIL_FIELD_PLACEHOLDER" = "Your Email Address";
+"ONBOARDING.CREATE_ACCOUNT_PASSWORD_PLACEHOLDER" = "Create a Password";
+"ONBOARDING.CREATE_ACCOUNT_CONFIRM_PASSOWRD_PLACEHOLDER" = "Confirm Your Password";
+"ONBOARDING.CREATE_ACCOUNT_CONTINUE_BUTTON" = "Continue Creating Your Account";
+"ONBOARDING.TOS_TITLE" = "Terms of Service and Privacy";
+"ONBOARDING.AGREE_CTA_TITLE" = "I have read and agree to the terms of service";
+
+"ONBOARDING.SUCCESS_TITLE" = "Congratulations! Your account has been created";
+"ONBOARDING.SUCCESS_CONTENT" = "Your secure account has been created. Before you continue, you'll need to verify your account by clicking the link we've sent to your email address";
+"ONBOARDING.SUCCESS_CONTINUE" = "Continue";
+
+"SETTINGS.TITLE" = "Settings";
+"SETTINGS.TOGGLE_TOUCHID" = "Enable TouchID";
+"SETTINGS.TOGGLE_NOTIFICATIONS" = "Enable Notifications";
+"SETTINGS.TOGGLE_NOTIFICATIONS_FOOTNOTE" = "We will only send you notifications whenever new contests are available";
