@@ -10,6 +10,7 @@
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface VTSignInViewController ()
+
 @property (strong, nonatomic) IBOutlet UILabel *signInDescriptionLabel;
 @property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *userIDTextField;
 @property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *passwordTextField;
@@ -26,6 +27,9 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,7 +51,7 @@
     self.loginContentLabel.font = [UIFont vt_standardContentFont];
     self.userIDTextField.floatingLabelYPadding = 3.0;
     self.passwordTextField.floatingLabelYPadding = 3.0;
-    self.userIDTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.userIDTextField.keyboardType = UIKeyboardTypePhonePad;
     self.passwordTextField.secureTextEntry = YES;
     self.userIDTextField.placeholder = NSLocalizedString(@"ONBOARDING.LOGIN_ACCOUNT_ID_FIELD_PLACEHOLDER", @"Login User ID Field Placeholder");
     self.passwordTextField.placeholder = NSLocalizedString(@"ONBOARDING.LOGIN_PASSWORD_FIELD_PLACEHOLDER", @"Login Password Field Placeholder");
@@ -60,6 +64,10 @@
 #pragma mark --- Class Method Overrides ---
 + (NSString *)titleForViewController {
     return @"Sign In";
+}
+
+- (IBAction)signInButtonPress:(id)sender {
+    [VTRouter routeSignInSuccess];
 }
 
 

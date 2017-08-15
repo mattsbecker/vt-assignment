@@ -23,6 +23,12 @@
 		C984EE5C1F414E8500B9C832 /* UIColor+VTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE5B1F414E8500B9C832 /* UIColor+VTColors.m */; };
 		C984EE5F1F414F6900B9C832 /* UIFont+VTFonts.m in Sources */ = {isa = PBXBuildFile; fileRef = C984EE5E1F414F6900B9C832 /* UIFont+VTFonts.m */; };
 		C984EE691F41645B00B9C832 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C984EE681F41645B00B9C832 /* Localizable.strings */; };
+		C9BA8EA21F426CF8006F5B3C /* VTTableViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EA11F426CF8006F5B3C /* VTTableViewCoordinator.m */; };
+		C9BA8EA51F426E74006F5B3C /* VTCoordinatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EA41F426E74006F5B3C /* VTCoordinatorTableViewController.m */; };
+		C9BA8EA81F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EA71F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.m */; };
+		C9BA8EAC1F4272B4006F5B3C /* VTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EAB1F4272B4006F5B3C /* VTTableViewCell.m */; };
+		C9BA8EAE1F427378006F5B3C /* VTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EAD1F427378006F5B3C /* VTTableViewCell.xib */; };
+		C9BA8EB01F427AA6006F5B3C /* VTCoordinatorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EAF1F427AA6006F5B3C /* VTCoordinatorTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,16 @@
 		C984EE5D1F414F6900B9C832 /* UIFont+VTFonts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+VTFonts.h"; sourceTree = "<group>"; };
 		C984EE5E1F414F6900B9C832 /* UIFont+VTFonts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+VTFonts.m"; sourceTree = "<group>"; };
 		C984EE681F41645B00B9C832 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C9BA8EA01F426CF8006F5B3C /* VTTableViewCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTableViewCoordinator.h; sourceTree = "<group>"; };
+		C9BA8EA11F426CF8006F5B3C /* VTTableViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTableViewCoordinator.m; sourceTree = "<group>"; };
+		C9BA8EA31F426E74006F5B3C /* VTCoordinatorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTCoordinatorTableViewController.h; sourceTree = "<group>"; };
+		C9BA8EA41F426E74006F5B3C /* VTCoordinatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTCoordinatorTableViewController.m; sourceTree = "<group>"; };
+		C9BA8EA61F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+VTTableViewCells.h"; sourceTree = "<group>"; };
+		C9BA8EA71F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+VTTableViewCells.m"; sourceTree = "<group>"; };
+		C9BA8EAA1F4272B4006F5B3C /* VTTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTableViewCell.h; sourceTree = "<group>"; };
+		C9BA8EAB1F4272B4006F5B3C /* VTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTableViewCell.m; sourceTree = "<group>"; };
+		C9BA8EAD1F427378006F5B3C /* VTTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTTableViewCell.xib; sourceTree = "<group>"; };
+		C9BA8EAF1F427AA6006F5B3C /* VTCoordinatorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTCoordinatorTableViewController.xib; sourceTree = "<group>"; };
 		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +133,7 @@
 				C984EE4C1F41467B00B9C832 /* Controllers */,
 				C984EE4D1F41468700B9C832 /* Coordinators */,
 				C984EE4E1F4146BD00B9C832 /* View Controllers */,
+				C9BA8EA91F427299006F5B3C /* Table View Cells */,
 				C984EE4F1F4146CD00B9C832 /* Views */,
 				C984EE4A1F41465700B9C832 /* User Preferences */,
 				C984EE231F3F92A100B9C832 /* AppDelegate.h */,
@@ -173,6 +190,8 @@
 		C984EE4D1F41468700B9C832 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				C9BA8EA01F426CF8006F5B3C /* VTTableViewCoordinator.h */,
+				C9BA8EA11F426CF8006F5B3C /* VTTableViewCoordinator.m */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -185,6 +204,9 @@
 				C984EE261F3F92A100B9C832 /* VTSignInViewController.h */,
 				C984EE271F3F92A100B9C832 /* VTSignInViewController.m */,
 				C984EE541F414DA200B9C832 /* VTSignInViewController.xib */,
+				C9BA8EA31F426E74006F5B3C /* VTCoordinatorTableViewController.h */,
+				C9BA8EA41F426E74006F5B3C /* VTCoordinatorTableViewController.m */,
+				C9BA8EAF1F427AA6006F5B3C /* VTCoordinatorTableViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -212,6 +234,8 @@
 				C984EE5B1F414E8500B9C832 /* UIColor+VTColors.m */,
 				C984EE5D1F414F6900B9C832 /* UIFont+VTFonts.h */,
 				C984EE5E1F414F6900B9C832 /* UIFont+VTFonts.m */,
+				C9BA8EA61F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.h */,
+				C9BA8EA71F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -222,6 +246,16 @@
 				C984EE681F41645B00B9C832 /* Localizable.strings */,
 			);
 			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		C9BA8EA91F427299006F5B3C /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9BA8EAA1F4272B4006F5B3C /* VTTableViewCell.h */,
+				C9BA8EAB1F4272B4006F5B3C /* VTTableViewCell.m */,
+				C9BA8EAD1F427378006F5B3C /* VTTableViewCell.xib */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		E904E517FADF24EA1438AD80 /* Frameworks */ = {
@@ -335,9 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C984EE691F41645B00B9C832 /* Localizable.strings in Resources */,
+				C9BA8EAE1F427378006F5B3C /* VTTableViewCell.xib in Resources */,
 				C984EE551F414DA200B9C832 /* VTSignInViewController.xib in Resources */,
 				C984EE491F413F7D00B9C832 /* Settings.bundle in Resources */,
 				C984EE331F3F92A100B9C832 /* LaunchScreen.storyboard in Resources */,
+				C9BA8EB01F427AA6006F5B3C /* VTCoordinatorTableViewController.xib in Resources */,
 				C984EE301F3F92A100B9C832 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,13 +485,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA8EA21F426CF8006F5B3C /* VTTableViewCoordinator.m in Sources */,
 				C984EE5C1F414E8500B9C832 /* UIColor+VTColors.m in Sources */,
 				C984EE2E1F3F92A100B9C832 /* Votem_Example.xcdatamodeld in Sources */,
 				C984EE591F414E5C00B9C832 /* VTBaseViewController.m in Sources */,
 				C984EE531F41472400B9C832 /* VTRouter.m in Sources */,
 				C984EE281F3F92A100B9C832 /* VTSignInViewController.m in Sources */,
+				C9BA8EA51F426E74006F5B3C /* VTCoordinatorTableViewController.m in Sources */,
 				C984EE251F3F92A100B9C832 /* AppDelegate.m in Sources */,
 				C984EE221F3F92A100B9C832 /* main.m in Sources */,
+				C9BA8EAC1F4272B4006F5B3C /* VTTableViewCell.m in Sources */,
+				C9BA8EA81F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.m in Sources */,
 				C984EE5F1F414F6900B9C832 /* UIFont+VTFonts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

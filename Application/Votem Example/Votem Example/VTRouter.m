@@ -8,6 +8,7 @@
 
 #import "VTRouter.h"
 #import "VTSignInViewController.h"
+#import "VTCoordinatorTableViewController.h"
 
 @implementation VTRouter
 
@@ -32,7 +33,15 @@
     
     [viewController.navigationItem setRightBarButtonItem:closeModalItem];
     [[VTRouter navigationController] presentViewController:navigationController animated:YES completion:nil];
+}
+
++ (void)routeSignInSuccess {
+    VTTableViewCoordinator *coordinator = [[VTTableViewCoordinator alloc] init];
+    VTCoordinatorTableViewController *vc = [[VTCoordinatorTableViewController alloc] initWithCoordinator:coordinator];
     
+    UINavigationController *newNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController *rootNavigationController = [VTRouter navigationController];
+    [rootNavigationController showViewController:newNavigationController sender:nil];
 }
 
 + (void)pushViewController:(UIViewController *)viewController {

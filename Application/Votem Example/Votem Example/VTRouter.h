@@ -37,4 +37,9 @@
  */
 + (UIViewController *)rootViewController;
 
+/**
+ Routes the user to the application after a successful sign in
+ */
++ (void)routeSignInSuccess;
+
 @end

@@ -63,13 +63,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9U5-TL-Oj7">
+                    <rect key="frame" x="164" y="454" width="46" height="30"/>
+                    <state key="normal" title="Sign In"/>
+                    <connections>
+                        <action selector="signInButtonPress:" destination="-1" eventType="touchUpInside" id="t5P-6A-Z33"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="hq1-mC-4Wd" firstAttribute="top" secondItem="7v7-kJ-KvH" secondAttribute="bottom" constant="44" id="1R8-wZ-TI3"/>
                 <constraint firstItem="Vs8-c7-10u" firstAttribute="leading" secondItem="hq1-mC-4Wd" secondAttribute="leading" id="5Hv-Pm-XHM"/>
-                <constraint firstItem="b5a-2M-0qj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="6kr-JA-2jp"/>
+                <constraint firstItem="b5a-2M-0qj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="6kr-JA-2jp"/>
                 <constraint firstItem="Vs8-c7-10u" firstAttribute="top" secondItem="C2B-yH-t3V" secondAttribute="bottom" constant="38" id="CO8-Jc-ZZM"/>
+                <constraint firstItem="9U5-TL-Oj7" firstAttribute="centerX" secondItem="C2B-yH-t3V" secondAttribute="centerX" id="TXc-Te-EuC"/>
                 <constraint firstItem="7v7-kJ-KvH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tfu-MR-Jlz"/>
                 <constraint firstItem="hq1-mC-4Wd" firstAttribute="trailing" secondItem="7v7-kJ-KvH" secondAttribute="trailing" id="UGk-rM-DBL"/>
                 <constraint firstItem="hq1-mC-4Wd" firstAttribute="leading" secondItem="7v7-kJ-KvH" secondAttribute="leading" id="ZTC-P9-f3t"/>
@@ -78,9 +86,9 @@
                 <constraint firstItem="C2B-yH-t3V" firstAttribute="trailing" secondItem="hq1-mC-4Wd" secondAttribute="trailing" id="fbO-TR-rVb"/>
                 <constraint firstItem="C2B-yH-t3V" firstAttribute="leading" secondItem="hq1-mC-4Wd" secondAttribute="leading" id="feO-aN-AzW"/>
                 <constraint firstItem="C2B-yH-t3V" firstAttribute="top" secondItem="hq1-mC-4Wd" secondAttribute="bottom" constant="24" id="svX-bk-dyc"/>
+                <constraint firstItem="9U5-TL-Oj7" firstAttribute="top" secondItem="Vs8-c7-10u" secondAttribute="bottom" constant="24" id="wp6-qy-Kfa"/>
                 <constraint firstItem="b5a-2M-0qj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z76-Mq-VIe"/>
             </constraints>
-            <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
