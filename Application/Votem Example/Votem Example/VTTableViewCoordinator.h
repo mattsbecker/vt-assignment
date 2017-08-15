@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString const *kVTKeyboardTypeValueKeyboardTypeKey;
+extern NSString const *kVTKeyboardTypeValueSecureEntryKey;
+
 @class VTTableViewCoordinator;
 
 @protocol VTTableViewCoordinatorDelegate <NSObject>
@@ -26,4 +29,9 @@
 - (void)notifiyDelegateDataLoaded:(NSArray*)data;
 - (void)notifyDelegateEncounteredError:(NSError*)error;
 - (void)fetchData;
+
+- (NSString *)dictionaryKeyForValue:(NSNumber*)value;
+- (NSString *)displayStringForValue:(NSNumber*)value;
+- (NSDictionary*)keyboardTypeForValue:(NSNumber*)value;
+
 @end

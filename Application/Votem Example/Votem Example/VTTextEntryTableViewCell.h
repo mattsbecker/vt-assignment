@@ -1,5 +1,5 @@
 //
-//  VTTableViewCell.h
+//  VTTextEntryTableViewCell.h
 //  Votem Example
 //
 //  Created by Matt on 8/14/17.
@@ -10,7 +10,10 @@
 #import "UITableViewCell+VTTableViewCells.h"
 #import "UIColor+VTColors.h"
 #import "UIFont+VTFonts.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
-@interface VTTableViewCell : UITableViewCell
+@interface VTTextEntryTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) IBOutlet JVFloatLabeledTextField *textField;
 
 @end

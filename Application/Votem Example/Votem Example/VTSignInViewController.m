@@ -7,6 +7,9 @@
 //
 
 #import "VTSignInViewController.h"
+#import "VTSignInViewController.h"
+#import "VTCreateAccountViewController.h"
+#import "VTCreateAccountTableViewCoordinator.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface VTSignInViewController ()
@@ -28,7 +31,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES];
+    [UINavigationBar appearance].tintColor = [UIColor vt_highlightBrandColor];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    UIBarButtonItem *createAccountItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"ONBOARDING.CREATE_NEW_ACCOUNT_BUTTON", @"Create new account button") style:UIBarButtonItemStylePlain target:self action:@selector(handleCreateAccountButtonPress:)];
+    self.navigationItem.rightBarButtonItem = createAccountItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,15 +68,25 @@
     self.loginContentLabel.text = NSLocalizedString(@"ONBOARDING.LOGIN_TITLE", @"Login title string");
 }
 
+- (void)handleCreateAccountButtonPress:(UIBarButtonItem*)sender {
+    VTCreateAccountTableViewCoordinator *coordinator = [[VTCreateAccountTableViewCoordinator alloc] init];
+    VTCreateAccountViewController *vc = [[VTCreateAccountViewController alloc] initWithCoordinator:coordinator];
+    [VTRouter pushViewController:vc];
+}
+
 #pragma mark --- Instance Methods ---
+
+- (IBAction)signInButtonPress:(id)sender {
+    [VTRouter routeSignInSuccess];
+}
+
++ (NSString *)nibNamed {
+    return @"VTSignInViewController";
+}
 
 #pragma mark --- Class Method Overrides ---
 + (NSString *)titleForViewController {
     return @"Sign In";
-}
-
-- (IBAction)signInButtonPress:(id)sender {
-    [VTRouter routeSignInSuccess];
 }
 
 

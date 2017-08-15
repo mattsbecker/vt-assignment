@@ -8,6 +8,9 @@
 
 #import "VTTableViewCoordinator.h"
 
+NSString const *kVTKeyboardTypeValueKeyboardTypeKey = @"kVTKeyboardTypeValueKeyboardTypeKey";
+NSString const *kVTKeyboardTypeValueSecureEntryKey = @"kVTKeyboardTypeValueSecureEntryKey";
+
 @interface VTTableViewCoordinator()
 
 @property (nonatomic, strong) NSMutableArray *mutableLoadedData;
@@ -42,6 +45,18 @@
     if ([self.delegate respondsToSelector:@selector(tableViewCoordinator:encounteredError:)]) {
         [self.delegate tableViewCoordinator:self encounteredError:error];
     }
+}
+
+- (NSString *)dictionaryKeyForValue:(NSNumber*)value {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+- (NSString *)displayStringForValue:(NSNumber*)value {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+- (NSDictionary*)keyboardTypeForValue:(NSNumber*)value {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
 }
 
 @end

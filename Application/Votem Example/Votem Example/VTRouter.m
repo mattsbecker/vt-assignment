@@ -55,6 +55,7 @@
 }
 
 + (UIViewController *)rootViewController {
+    // Retreive the root view controller from the main window
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     UIViewController *controller = window.rootViewController;
     if ([controller isKindOfClass:UINavigationController.class]) {

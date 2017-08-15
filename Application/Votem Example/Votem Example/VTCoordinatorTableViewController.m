@@ -9,13 +9,13 @@
 #import "VTCoordinatorTableViewController.h"
 
 @interface VTCoordinatorTableViewController ()
-@property (nonatomic, strong) VTTableViewCoordinator *coordinator;
+
 @end
 
 @implementation VTCoordinatorTableViewController
 
 - (instancetype)initWithCoordinator:(VTTableViewCoordinator*)coordinator {
-    self = [[VTCoordinatorTableViewController alloc] initWithNibName:[[self class] nibNamed] bundle:nil];
+    self = [[[self class] alloc] initWithNibName:[[self class] nibNamed] bundle:nil];
     self.coordinator = coordinator;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -31,6 +31,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.title = [[self class] titleForViewController];
 }
 
 #pragma mark - Table view data source
@@ -96,12 +100,16 @@
 }
 
 # pragma mark --- Class Methods for Overriding ---
++ (NSString *)titleForViewController {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
 + (NSString *)nibNamed {
-    return @"VTCoordinatorTableViewController";
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
 }
 
 + (void)registerTableViewCells:(UITableView*)tableView {
-    [tableView registerNib:[VTTableViewCell vt_tableViewCellNib] forCellReuseIdentifier:[VTTableViewCell vt_reuseIdentifier]];
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
 }
 
 @end

@@ -29,6 +29,11 @@
 		C9BA8EAC1F4272B4006F5B3C /* VTTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EAB1F4272B4006F5B3C /* VTTableViewCell.m */; };
 		C9BA8EAE1F427378006F5B3C /* VTTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EAD1F427378006F5B3C /* VTTableViewCell.xib */; };
 		C9BA8EB01F427AA6006F5B3C /* VTCoordinatorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EAF1F427AA6006F5B3C /* VTCoordinatorTableViewController.xib */; };
+		C9BA8EB41F428269006F5B3C /* VTCreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EB21F428269006F5B3C /* VTCreateAccountViewController.m */; };
+		C9BA8EB51F428269006F5B3C /* VTCreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EB31F428269006F5B3C /* VTCreateAccountViewController.xib */; };
+		C9BA8EB81F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EB71F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m */; };
+		C9BA8EC11F429104006F5B3C /* VTTextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EBF1F429104006F5B3C /* VTTextEntryTableViewCell.m */; };
+		C9BA8EC21F429104006F5B3C /* VTTextEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EC01F429104006F5B3C /* VTTextEntryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,14 @@
 		C9BA8EAB1F4272B4006F5B3C /* VTTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTableViewCell.m; sourceTree = "<group>"; };
 		C9BA8EAD1F427378006F5B3C /* VTTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTTableViewCell.xib; sourceTree = "<group>"; };
 		C9BA8EAF1F427AA6006F5B3C /* VTCoordinatorTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTCoordinatorTableViewController.xib; sourceTree = "<group>"; };
+		C9BA8EB11F428269006F5B3C /* VTCreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTCreateAccountViewController.h; sourceTree = "<group>"; };
+		C9BA8EB21F428269006F5B3C /* VTCreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTCreateAccountViewController.m; sourceTree = "<group>"; };
+		C9BA8EB31F428269006F5B3C /* VTCreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTCreateAccountViewController.xib; sourceTree = "<group>"; };
+		C9BA8EB61F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTCreateAccountTableViewCoordinator.h; sourceTree = "<group>"; };
+		C9BA8EB71F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTCreateAccountTableViewCoordinator.m; sourceTree = "<group>"; };
+		C9BA8EBE1F429104006F5B3C /* VTTextEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTextEntryTableViewCell.h; sourceTree = "<group>"; };
+		C9BA8EBF1F429104006F5B3C /* VTTextEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTextEntryTableViewCell.m; sourceTree = "<group>"; };
+		C9BA8EC01F429104006F5B3C /* VTTextEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTTextEntryTableViewCell.xib; sourceTree = "<group>"; };
 		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +205,8 @@
 			children = (
 				C9BA8EA01F426CF8006F5B3C /* VTTableViewCoordinator.h */,
 				C9BA8EA11F426CF8006F5B3C /* VTTableViewCoordinator.m */,
+				C9BA8EB61F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.h */,
+				C9BA8EB71F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -207,6 +222,9 @@
 				C9BA8EA31F426E74006F5B3C /* VTCoordinatorTableViewController.h */,
 				C9BA8EA41F426E74006F5B3C /* VTCoordinatorTableViewController.m */,
 				C9BA8EAF1F427AA6006F5B3C /* VTCoordinatorTableViewController.xib */,
+				C9BA8EB11F428269006F5B3C /* VTCreateAccountViewController.h */,
+				C9BA8EB21F428269006F5B3C /* VTCreateAccountViewController.m */,
+				C9BA8EB31F428269006F5B3C /* VTCreateAccountViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -254,6 +272,9 @@
 				C9BA8EAA1F4272B4006F5B3C /* VTTableViewCell.h */,
 				C9BA8EAB1F4272B4006F5B3C /* VTTableViewCell.m */,
 				C9BA8EAD1F427378006F5B3C /* VTTableViewCell.xib */,
+				C9BA8EBE1F429104006F5B3C /* VTTextEntryTableViewCell.h */,
+				C9BA8EBF1F429104006F5B3C /* VTTextEntryTableViewCell.m */,
+				C9BA8EC01F429104006F5B3C /* VTTextEntryTableViewCell.xib */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -372,7 +393,9 @@
 				C9BA8EAE1F427378006F5B3C /* VTTableViewCell.xib in Resources */,
 				C984EE551F414DA200B9C832 /* VTSignInViewController.xib in Resources */,
 				C984EE491F413F7D00B9C832 /* Settings.bundle in Resources */,
+				C9BA8EB51F428269006F5B3C /* VTCreateAccountViewController.xib in Resources */,
 				C984EE331F3F92A100B9C832 /* LaunchScreen.storyboard in Resources */,
+				C9BA8EC21F429104006F5B3C /* VTTextEntryTableViewCell.xib in Resources */,
 				C9BA8EB01F427AA6006F5B3C /* VTCoordinatorTableViewController.xib in Resources */,
 				C984EE301F3F92A100B9C832 /* Assets.xcassets in Resources */,
 			);
@@ -485,15 +508,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA8EC11F429104006F5B3C /* VTTextEntryTableViewCell.m in Sources */,
 				C9BA8EA21F426CF8006F5B3C /* VTTableViewCoordinator.m in Sources */,
 				C984EE5C1F414E8500B9C832 /* UIColor+VTColors.m in Sources */,
 				C984EE2E1F3F92A100B9C832 /* Votem_Example.xcdatamodeld in Sources */,
 				C984EE591F414E5C00B9C832 /* VTBaseViewController.m in Sources */,
 				C984EE531F41472400B9C832 /* VTRouter.m in Sources */,
 				C984EE281F3F92A100B9C832 /* VTSignInViewController.m in Sources */,
+				C9BA8EB41F428269006F5B3C /* VTCreateAccountViewController.m in Sources */,
 				C9BA8EA51F426E74006F5B3C /* VTCoordinatorTableViewController.m in Sources */,
 				C984EE251F3F92A100B9C832 /* AppDelegate.m in Sources */,
 				C984EE221F3F92A100B9C832 /* main.m in Sources */,
+				C9BA8EB81F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m in Sources */,
 				C9BA8EAC1F4272B4006F5B3C /* VTTableViewCell.m in Sources */,
 				C9BA8EA81F4271D2006F5B3C /* UITableViewCell+VTTableViewCells.m in Sources */,
 				C984EE5F1F414F6900B9C832 /* UIFont+VTFonts.m in Sources */,

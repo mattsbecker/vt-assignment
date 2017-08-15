@@ -12,7 +12,9 @@
 
 @interface VTCoordinatorTableViewController : UITableViewController<VTTableViewCoordinatorDelegate>
 
-- (instancetype)initWithCoordinator:(VTTableViewCoordinator*)coordinator;
-+ (NSString *)nibNamed;
+@property (nonatomic, strong) VTTableViewCoordinator *coordinator;
 
+- (instancetype)initWithCoordinator:(VTTableViewCoordinator*)coordinator;
+- (id)objectForRowAtIndexPath:(NSIndexPath *)indexPath;
+- (id)objectForSection:(NSInteger)section;
 @end
