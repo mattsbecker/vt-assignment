@@ -34,6 +34,14 @@
 		C9BA8EB81F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EB71F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m */; };
 		C9BA8EC11F429104006F5B3C /* VTTextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EBF1F429104006F5B3C /* VTTextEntryTableViewCell.m */; };
 		C9BA8EC21F429104006F5B3C /* VTTextEntryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EC01F429104006F5B3C /* VTTextEntryTableViewCell.xib */; };
+		C9BA8EC51F453670006F5B3C /* VTContestsViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EC41F453670006F5B3C /* VTContestsViewCoordinator.m */; };
+		C9BA8EC81F45406F006F5B3C /* VTContest.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EC71F45406F006F5B3C /* VTContest.m */; };
+		C9BA8ECF1F45422F006F5B3C /* VTBallot.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8ECE1F45422F006F5B3C /* VTBallot.m */; };
+		C9BA8ED61F4544C1006F5B3C /* VTRankedChoiceBallot.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8ED51F4544C1006F5B3C /* VTRankedChoiceBallot.m */; };
+		C9BA8ED91F4545B2006F5B3C /* VTSelectOneBallot.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8ED81F4545B2006F5B3C /* VTSelectOneBallot.m */; };
+		C9BA8EDC1F4545DB006F5B3C /* VTSelectTwoBallot.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EDB1F4545DB006F5B3C /* VTSelectTwoBallot.m */; };
+		C9BA8EE01F454871006F5B3C /* VTContestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EDE1F454871006F5B3C /* VTContestsTableViewController.m */; };
+		C9BA8EE11F454871006F5B3C /* VTContestsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EDF1F454871006F5B3C /* VTContestsTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +99,21 @@
 		C9BA8EBE1F429104006F5B3C /* VTTextEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTTextEntryTableViewCell.h; sourceTree = "<group>"; };
 		C9BA8EBF1F429104006F5B3C /* VTTextEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTTextEntryTableViewCell.m; sourceTree = "<group>"; };
 		C9BA8EC01F429104006F5B3C /* VTTextEntryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTTextEntryTableViewCell.xib; sourceTree = "<group>"; };
+		C9BA8EC31F453670006F5B3C /* VTContestsViewCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTContestsViewCoordinator.h; sourceTree = "<group>"; };
+		C9BA8EC41F453670006F5B3C /* VTContestsViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTContestsViewCoordinator.m; sourceTree = "<group>"; };
+		C9BA8EC61F45406F006F5B3C /* VTContest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTContest.h; sourceTree = "<group>"; };
+		C9BA8EC71F45406F006F5B3C /* VTContest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTContest.m; sourceTree = "<group>"; };
+		C9BA8ECD1F45422F006F5B3C /* VTBallot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTBallot.h; sourceTree = "<group>"; };
+		C9BA8ECE1F45422F006F5B3C /* VTBallot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTBallot.m; sourceTree = "<group>"; };
+		C9BA8ED41F4544C1006F5B3C /* VTRankedChoiceBallot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTRankedChoiceBallot.h; sourceTree = "<group>"; };
+		C9BA8ED51F4544C1006F5B3C /* VTRankedChoiceBallot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTRankedChoiceBallot.m; sourceTree = "<group>"; };
+		C9BA8ED71F4545B2006F5B3C /* VTSelectOneBallot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTSelectOneBallot.h; sourceTree = "<group>"; };
+		C9BA8ED81F4545B2006F5B3C /* VTSelectOneBallot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTSelectOneBallot.m; sourceTree = "<group>"; };
+		C9BA8EDA1F4545DB006F5B3C /* VTSelectTwoBallot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTSelectTwoBallot.h; sourceTree = "<group>"; };
+		C9BA8EDB1F4545DB006F5B3C /* VTSelectTwoBallot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTSelectTwoBallot.m; sourceTree = "<group>"; };
+		C9BA8EDD1F454871006F5B3C /* VTContestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTContestsTableViewController.h; sourceTree = "<group>"; };
+		C9BA8EDE1F454871006F5B3C /* VTContestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTContestsTableViewController.m; sourceTree = "<group>"; };
+		C9BA8EDF1F454871006F5B3C /* VTContestsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTContestsTableViewController.xib; sourceTree = "<group>"; };
 		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +212,16 @@
 		C984EE4B1F41466E00B9C832 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9BA8EC61F45406F006F5B3C /* VTContest.h */,
+				C9BA8EC71F45406F006F5B3C /* VTContest.m */,
+				C9BA8ECD1F45422F006F5B3C /* VTBallot.h */,
+				C9BA8ECE1F45422F006F5B3C /* VTBallot.m */,
+				C9BA8ED41F4544C1006F5B3C /* VTRankedChoiceBallot.h */,
+				C9BA8ED51F4544C1006F5B3C /* VTRankedChoiceBallot.m */,
+				C9BA8ED71F4545B2006F5B3C /* VTSelectOneBallot.h */,
+				C9BA8ED81F4545B2006F5B3C /* VTSelectOneBallot.m */,
+				C9BA8EDA1F4545DB006F5B3C /* VTSelectTwoBallot.h */,
+				C9BA8EDB1F4545DB006F5B3C /* VTSelectTwoBallot.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,6 +240,8 @@
 				C9BA8EA11F426CF8006F5B3C /* VTTableViewCoordinator.m */,
 				C9BA8EB61F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.h */,
 				C9BA8EB71F4282FE006F5B3C /* VTCreateAccountTableViewCoordinator.m */,
+				C9BA8EC31F453670006F5B3C /* VTContestsViewCoordinator.h */,
+				C9BA8EC41F453670006F5B3C /* VTContestsViewCoordinator.m */,
 			);
 			name = Coordinators;
 			sourceTree = "<group>";
@@ -225,6 +260,9 @@
 				C9BA8EB11F428269006F5B3C /* VTCreateAccountViewController.h */,
 				C9BA8EB21F428269006F5B3C /* VTCreateAccountViewController.m */,
 				C9BA8EB31F428269006F5B3C /* VTCreateAccountViewController.xib */,
+				C9BA8EDD1F454871006F5B3C /* VTContestsTableViewController.h */,
+				C9BA8EDE1F454871006F5B3C /* VTContestsTableViewController.m */,
+				C9BA8EDF1F454871006F5B3C /* VTContestsTableViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -391,6 +429,7 @@
 			files = (
 				C984EE691F41645B00B9C832 /* Localizable.strings in Resources */,
 				C9BA8EAE1F427378006F5B3C /* VTTableViewCell.xib in Resources */,
+				C9BA8EE11F454871006F5B3C /* VTContestsTableViewController.xib in Resources */,
 				C984EE551F414DA200B9C832 /* VTSignInViewController.xib in Resources */,
 				C984EE491F413F7D00B9C832 /* Settings.bundle in Resources */,
 				C9BA8EB51F428269006F5B3C /* VTCreateAccountViewController.xib in Resources */,
@@ -508,10 +547,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA8ED91F4545B2006F5B3C /* VTSelectOneBallot.m in Sources */,
+				C9BA8EDC1F4545DB006F5B3C /* VTSelectTwoBallot.m in Sources */,
+				C9BA8ECF1F45422F006F5B3C /* VTBallot.m in Sources */,
 				C9BA8EC11F429104006F5B3C /* VTTextEntryTableViewCell.m in Sources */,
+				C9BA8ED61F4544C1006F5B3C /* VTRankedChoiceBallot.m in Sources */,
 				C9BA8EA21F426CF8006F5B3C /* VTTableViewCoordinator.m in Sources */,
+				C9BA8EC81F45406F006F5B3C /* VTContest.m in Sources */,
+				C9BA8EC51F453670006F5B3C /* VTContestsViewCoordinator.m in Sources */,
 				C984EE5C1F414E8500B9C832 /* UIColor+VTColors.m in Sources */,
 				C984EE2E1F3F92A100B9C832 /* Votem_Example.xcdatamodeld in Sources */,
+				C9BA8EE01F454871006F5B3C /* VTContestsTableViewController.m in Sources */,
 				C984EE591F414E5C00B9C832 /* VTBaseViewController.m in Sources */,
 				C984EE531F41472400B9C832 /* VTRouter.m in Sources */,
 				C984EE281F3F92A100B9C832 /* VTSignInViewController.m in Sources */,

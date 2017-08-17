@@ -24,6 +24,8 @@
 "ONBOARDING.SUCCESS_CONTENT" = "Your secure account has been created. Before you continue, you'll need to verify your account by clicking the link we've sent to your email address";
 "ONBOARDING.SUCCESS_CONTINUE" = "Continue";
 
+"CONTESTS.SELECT_CONTEST_TITLE" = "Available contests";
+
 "SETTINGS.TITLE" = "Settings";
 "SETTINGS.TOGGLE_TOUCHID" = "Enable TouchID";
 "SETTINGS.TOGGLE_NOTIFICATIONS" = "Enable Notifications";

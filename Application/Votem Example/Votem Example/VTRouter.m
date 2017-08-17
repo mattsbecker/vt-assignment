@@ -9,6 +9,8 @@
 #import "VTRouter.h"
 #import "VTSignInViewController.h"
 #import "VTCoordinatorTableViewController.h"
+#import "VTContestsViewCoordinator.h"
+#import "VTContestsTableViewController.h"
 
 @implementation VTRouter
 
@@ -36,8 +38,8 @@
 }
 
 + (void)routeSignInSuccess {
-    VTTableViewCoordinator *coordinator = [[VTTableViewCoordinator alloc] init];
-    VTCoordinatorTableViewController *vc = [[VTCoordinatorTableViewController alloc] initWithCoordinator:coordinator];
+    VTContestsViewCoordinator *coordinator = [[VTContestsViewCoordinator alloc] init];
+    VTContestsTableViewController *vc = [[VTContestsTableViewController alloc] initWithCoordinator:coordinator];
     
     UINavigationController *newNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     UINavigationController *rootNavigationController = [VTRouter navigationController];
