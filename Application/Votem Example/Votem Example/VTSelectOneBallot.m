@@ -16,7 +16,16 @@
 - (instancetype) init {
     self = [super init];
     self.type = kVTBallotTypeSelectOne;
+    self.selections = [[NSArray<VTBallotOption *> alloc] init];
+    self.options = [NSArray array];
     return self;
+}
+
+- (void)selectOption:(VTBallotOption *)option {
+    // Given this is a select-one ballot type, the "selections" for this ballot will can only ever contain one selection
+    if (![self.selections containsObject:option]) {
+        self.selections = @[option];
+    }
 }
 
 @end

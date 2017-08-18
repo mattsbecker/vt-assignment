@@ -165,6 +165,31 @@ NSInteger const kVTTestableContestId = 100;
     XCTAssertTrue(selectOneBallot.options.count == 2);
 }
 
+- (void)testCastVoteForSelectOneBallot {
+    // Test to ensure the ballot is successfully created and is of the correct type
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions]];
+    
+    XCTAssertNotNil(selectOneBallot);
+    XCTAssertEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectOne));
+    XCTAssertNotEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectTwo));
+    
+    // After creation is verified, ensure the ballot properties are correctly stored
+    XCTAssertEqual(selectOneBallot.title, self.selectOneBallotTitle);
+    XCTAssertEqual(selectOneBallot.subtitle, self.selectOneBallotSubtitle);
+    XCTAssertEqual(selectOneBallot.instructions, self.selectOneBallotInstructions);
+    XCTAssertTrue(selectOneBallot.options.count == 2);
+    
+    [selectOneBallot addKeyValueObserver:self];
+    [selectOneBallot selectOption:selectOneBallot.options[0]];
+    XCTAssertEqual(selectOneBallot.selections[0], selectOneBallot.options[0]);
+    NSLog(@"The user casted a vote for : %@, the option title is: %@", selectOneBallot.title, selectOneBallot.selections[0].title);
+    [selectOneBallot selectOption:selectOneBallot.options[1]];
+    XCTAssertEqual(selectOneBallot.selections[0], selectOneBallot.options[1]);
+    NSLog(@"The user casted a vote for : %@, the option title is: %@", selectOneBallot.title, selectOneBallot.selections[0].title);
+    
+}
+
+
 - (void)testCanCrateSelectOneWithNoteBallot {
     VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneWithNoteBallotTitle subTitle:self.selectOneWithNoteBallotSubtitle instructions:self.selectOneWithNoteBallotInstructions ballotNote:self.selectOneWithNoteBallotNote options:[self chooseOneWithNoteBallotOptions]];
     

@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
     kVTBallotTypeSelectTwo
 };
 
+extern NSString const *kVTBallotSelectionValueKey;
+
 @class VTBallot;
 
 @protocol VTBallot <NSObject>
@@ -44,5 +46,10 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
 @property(nonatomic, strong) NSArray<VTBallotOption *> *selections;
 @property(nonatomic, assign) VTBallotType type;
 @property(nonatomic, assign) BOOL enabled;
+@property(nonatomic, readonly) NSArray<NSObject*> *keyValueObservers;
+
+- (void)selectOption:(VTBallotOption *)option;
+- (void)addKeyValueObserver:(NSObject*)keyValueObserver;
+- (void)removeKeyValueObserver:(NSObject*)keyValueObserver;
 
 @end
