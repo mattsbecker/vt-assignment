@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
 
 @required
 
-@property(nonatomic, assign) NSInteger ballotId;
+@property(nonatomic, assign) NSNumber *ballotId;
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSArray *options;
 @property(nonatomic, strong) NSArray *selections;
@@ -37,7 +37,7 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
 
 @interface VTBallot : NSObject<VTBallot>
 
-@property(nonatomic, assign) NSInteger ballotId;
+@property(nonatomic, assign) NSNumber *ballotId;
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSArray *options;
 @property(nonatomic, strong) NSArray *selections;

@@ -12,7 +12,7 @@
 
 @interface VTContest : NSObject
 
-@property (nonatomic, assign) NSInteger contestId;
+@property (nonatomic, assign) NSNumber *contestId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
