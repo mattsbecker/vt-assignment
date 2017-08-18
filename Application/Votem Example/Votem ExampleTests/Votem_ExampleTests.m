@@ -186,7 +186,6 @@ NSInteger const kVTTestableContestId = 100;
     [selectOneBallot selectOption:selectOneBallot.options[1]];
     XCTAssertEqual(selectOneBallot.selections[0], selectOneBallot.options[1]);
     NSLog(@"The user casted a vote for : %@, the option title is: %@", selectOneBallot.title, selectOneBallot.selections[0].title);
-    
 }
 
 

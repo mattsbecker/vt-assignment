@@ -41,9 +41,9 @@
     VTContestsViewCoordinator *coordinator = [[VTContestsViewCoordinator alloc] init];
     VTContestsTableViewController *vc = [[VTContestsTableViewController alloc] initWithCoordinator:coordinator];
     
-    UINavigationController *newNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+//    UINavigationController *newNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     UINavigationController *rootNavigationController = [VTRouter navigationController];
-    [rootNavigationController showViewController:newNavigationController sender:nil];
+    [rootNavigationController pushViewController:vc animated:YES];
 }
 
 + (void)pushViewController:(UIViewController *)viewController {

@@ -7,8 +7,12 @@
 //
 
 #import "VTContestsTableViewController.h"
+#import "VTBallotListTableViewController.h"
+#import "VTBallotTableViewCoordinator.h"
 #import "VTTableViewCell.h"
 #import "VTContest.h"
+#import "VTRouter.h"
+
 @interface VTContestsTableViewController ()
 
 @end
@@ -26,13 +30,23 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    VTContest *objectForRow = (VTContest*)[self objectForSection:indexPath.section];
+    VTContest *objectForRow = (VTContest*)[self objectForRowAtIndexPath:indexPath];
     NSString *placeholderString = [NSString stringWithFormat:@"%@ - %zd ballot(s)", objectForRow.name, objectForRow.availableBallots.count];
     
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier] forIndexPath:indexPath];
     //NSString *placeholderString = [self.coordinator registrationKeyForValue:(NSUInteger)[super objectForRowAtIndexPath:indexPath]];
     cell.textLabel.text = placeholderString;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    VTContest *objectForRow = (VTContest*)[self objectForRowAtIndexPath:indexPath];
+    VTBallotTableViewCoordinator *coordinator = [[VTBallotTableViewCoordinator alloc] initWithContest:objectForRow];
+    VTBallotListTableViewController *vc = [[VTBallotListTableViewController alloc] initWithCoordinator:coordinator];
+    vc.title = objectForRow.name;
+    [VTRouter pushViewController:vc];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
