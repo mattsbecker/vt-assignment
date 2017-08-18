@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "VTContest.h"
+#import "VTBallotFactory.h"
 #import "VTRankedChoiceBallot.h"
 #import "VTSelectOneBallot.h"
 #import "VTSelectTwoBallot.h"
@@ -112,7 +113,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCreateNamedContestOneBallot {
     NSString *contestName = @"One Ballot Contest";
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[self ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotTitle ballotNote:nil options:[self chooseOneBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotTitle ballotNote:nil options:[self chooseOneBallotOptions]];
     
 
     VTContest *contest = [self contestWithName:contestName];
@@ -130,12 +131,11 @@ NSInteger const kVTTestableContestId = 100;
     
     XCTAssertTrue(contest.availableBallots.count == 1);
     XCTAssertTrue([contest.availableBallots[0] isKindOfClass:VTBallot.class]);
-    
 }
 
 - (void)testCanCrateRankedChoiceBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTRankedChoiceBallot *rankedChoiceBallot = (VTRankedChoiceBallot*)[self ballotWithType:kVTBallotTypeRankedChoice title:self.rankedChoiceBallotTitle subTitle:self.rankedChoiceBallotSubtitle instructions:self.rankedChoiceBallotInstructions ballotNote:nil options:[self rankedChoiceBallotOptions]];
+    VTRankedChoiceBallot *rankedChoiceBallot = (VTRankedChoiceBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeRankedChoice title:self.rankedChoiceBallotTitle subTitle:self.rankedChoiceBallotSubtitle instructions:self.rankedChoiceBallotInstructions ballotNote:nil options:[self rankedChoiceBallotOptions]];
     
     XCTAssertNotNil(rankedChoiceBallot);
     XCTAssertEqualObjects(@(rankedChoiceBallot.type), @(kVTBallotTypeRankedChoice));
@@ -151,7 +151,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCrateSelectOneBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[self ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions]];
     
     XCTAssertNotNil(selectOneBallot);
     XCTAssertEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectOne));
@@ -165,7 +165,7 @@ NSInteger const kVTTestableContestId = 100;
 }
 
 - (void)testCanCrateSelectOneWithNoteBallot {
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[self ballotWithType:kVTBallotTypeSelectOne title:self.selectOneWithNoteBallotTitle subTitle:self.selectOneWithNoteBallotSubtitle instructions:self.selectOneWithNoteBallotInstructions ballotNote:self.selectOneWithNoteBallotNote options:[self chooseOneWithNoteBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneWithNoteBallotTitle subTitle:self.selectOneWithNoteBallotSubtitle instructions:self.selectOneWithNoteBallotInstructions ballotNote:self.selectOneWithNoteBallotNote options:[self chooseOneWithNoteBallotOptions]];
     
     // Test to ensure the ballot is successfully created and is of the correct type
     XCTAssertNotNil(selectOneBallot);
@@ -182,7 +182,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCreateSelectTwoBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[self ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions]];
+    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions]];
     XCTAssertNotNil(selectTwoBallot);
     XCTAssertEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectTwo));
     XCTAssertNotEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectOne));
@@ -223,47 +223,5 @@ NSInteger const kVTTestableContestId = 100;
     NSArray *chooseTwoOptions = [NSArray arrayWithObjects:@"YES ON CI - 116 (FOR VANILLA)", @"NO ON 116 (NO ON VANILLA)", nil];
     return chooseTwoOptions;
 }
-
--(VTBallot *)ballotWithType:(VTBallotType)type
-                                title:(NSString *)title
-                             subTitle:(NSString *)subtitle
-                         instructions:(NSString *)instructions
-                           ballotNote:(NSString *)ballotNote
-                              options:(NSArray *)options {
-    
-    VTBallot *ballot;
-    
-    if (type == kVTBallotTypeSelectOne) {
-        VTSelectOneBallot *selectOneBallot = [[VTSelectOneBallot alloc] init];
-        ballot = selectOneBallot;
-    } else if (type == kVTBallotTypeSelectTwo) {
-        VTSelectTwoBallot *selectOneBallot = [[VTSelectTwoBallot alloc] init];
-        ballot = selectOneBallot;
-    } else if (type == kVTBallotTypeRankedChoice) {
-        VTRankedChoiceBallot *selectOneBallot = [[VTRankedChoiceBallot alloc] init];
-        ballot = selectOneBallot;
-    } else {
-        // We couldn't match a ballot type to a class, so return nil for now
-        return nil;
-    }
-
-    // After creation is verified, ensure the required ballot properties are stored
-    ballot.title = title;
-    ballot.options = options;
-    
-    // If any optional fields have been provided, set them here, otherwise, leave them nil
-    if (subtitle) {
-        ballot.subtitle = subtitle;
-    }
-    if (instructions) {
-        ballot.instructions = instructions;
-    }
-    if (ballotNote) {
-        ballot.ballotNote = ballotNote;
-    }
-    
-    return ballot;
-}
-
 
 @end
