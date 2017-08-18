@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VTBallotOption.h"
 
 typedef NS_ENUM(NSUInteger, VTBallotType) {
     kVTBallotTypeRankedChoice,
@@ -23,7 +24,7 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
 @property(nonatomic, assign) NSNumber *ballotId;
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSArray *options;
-@property(nonatomic, strong) NSArray *selections;
+@property(nonatomic, strong) NSArray<VTBallotOption *> *selections;
 @property(nonatomic, assign) VTBallotType type;
 @property(nonatomic, assign) BOOL enabled;
 
@@ -40,7 +41,7 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
 @property(nonatomic, assign) NSNumber *ballotId;
 @property(nonatomic, strong) NSString *title;
 @property(nonatomic, strong) NSArray *options;
-@property(nonatomic, strong) NSArray *selections;
+@property(nonatomic, strong) NSArray<VTBallotOption *> *selections;
 @property(nonatomic, assign) VTBallotType type;
 @property(nonatomic, assign) BOOL enabled;
 

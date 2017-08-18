@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "VTContest.h"
+#import "VTBallotOption.h"
 #import "VTBallotFactory.h"
 #import "VTRankedChoiceBallot.h"
 #import "VTSelectOneBallot.h"
@@ -66,7 +67,7 @@ NSInteger const kVTTestableContestId = 100;
     self.selectOneBallotTitle = @"For Cheif Dairy Queen";
     self.selectOneBallotSubtitle = @"Shall Justice Mint C. Chip of the Supreme Court of the State of Ice Create be retained in office for another term?";
     self.selectOneBallotInstructions = @"Select the checkbox before the word \"YES\" if you wish the official to remain in office. \nSelect the checkbox before the word \"NO\" if you do not wish the official to remain in office";
-    self.selectOneBallotOptions = [self selectOneBallotOptions];
+    self.selectOneBallotOptions = [self chooseOneBallotOptions];
     
     // select-one with a note...
     self.selectOneWithNoteBallotTitle = @"Ballot Issue";
@@ -200,9 +201,14 @@ NSInteger const kVTTestableContestId = 100;
 }
 
 - (NSArray *)rankedChoiceBallotOptions {
-    NSString *option1 = @"Reese WithoutASpoon - Democrat for C.I.C \nCherry Garcia - Democrat for Vice Ice";
-    NSString *option2 = @"Choco 'Chip' Dough - Republican for C.I.C \nCarmela Coney - Republican for Vice Ice";
-    NSString *option3 = @"Magic Browny - Independent for C.I.C \nPhish Food - Independent for Vice Ice";
+    VTBallotOption *option1 = [[VTBallotOption alloc] init];
+    option1.title = @"Reese WithoutASpoon - Democrat for C.I.C \nCherry Garcia - Democrat for Vice Ice";
+
+    VTBallotOption *option2 = [[VTBallotOption alloc] init];
+    option2.title = @"Choco 'Chip' Dough - Republican for C.I.C \nCarmela Coney - Republican for Vice Ice";
+    
+    VTBallotOption *option3 = [[VTBallotOption alloc] init];
+    option3.title = @"Magic Browny - Independent for C.I.C \nPhish Food - Independent for Vice Ice";
     
     NSArray *rankedChoiceOptions = [NSArray arrayWithObjects:option1, option2, option3, nil];
     
@@ -210,17 +216,38 @@ NSInteger const kVTTestableContestId = 100;
 }
 
 - (NSArray *)chooseTwoBallotOptions {
-    NSArray *chooseTwoOptions = [NSArray arrayWithObjects:@"P. Nut Butter (REPUBLICAN)", @"Cream C. Kol (INDEPENDENT)", @"Marsh Mallow (DEMOCRAT)", nil];
+    VTBallotOption *option1 = [[VTBallotOption alloc] init];
+    option1.title = @"P. Nut Butter (REPUBLICAN)";
+    
+    VTBallotOption *option2 = [[VTBallotOption alloc] init];
+    option2.title = @"Cream C. Kol (INDEPENDENT)";
+
+    VTBallotOption *option3 = [[VTBallotOption alloc] init];
+    option3.title = @"Marsh Mallow (DEMOCRAT)";
+
+    NSArray *chooseTwoOptions = [NSArray arrayWithObjects:option1, option2, option3, nil];
     return chooseTwoOptions;
 }
 
 - (NSArray *)chooseOneBallotOptions {
-    NSArray *chooseTwoOptions = [NSArray arrayWithObjects:@"YES", @"NO", nil];
+    VTBallotOption *option1 = [[VTBallotOption alloc] init];
+    option1.title = @"YES";
+    
+    VTBallotOption *option2 = [[VTBallotOption alloc] init];
+    option2.title = @"NO";
+
+    NSArray *chooseTwoOptions = [NSArray arrayWithObjects:option1, option2, nil];
     return chooseTwoOptions;
 }
 
 - (NSArray *)chooseOneWithNoteBallotOptions {
-    NSArray *chooseTwoOptions = [NSArray arrayWithObjects:@"YES ON CI - 116 (FOR VANILLA)", @"NO ON 116 (NO ON VANILLA)", nil];
+    VTBallotOption *option1 = [[VTBallotOption alloc] init];
+    option1.title = @"YES ON CI - 116 (FOR VANILLA)";
+    
+    VTBallotOption *option2 = [[VTBallotOption alloc] init];
+    option2.title = @"NO ON 116 (NO ON VANILLA)";
+
+    NSArray *chooseTwoOptions = [NSArray arrayWithObjects:option1, option2, nil];
     return chooseTwoOptions;
 }
 
