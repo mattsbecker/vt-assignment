@@ -13,13 +13,58 @@
 #import "VTSelectTwoBallot.h"
 
 @interface Votem_ExampleTests : XCTestCase
+// Select-One ballot properties
+@property(nonatomic, strong) NSString *selectOneBallotTitle;
+@property(nonatomic, strong) NSString *selectOneBallotSubtitle;
+@property(nonatomic, strong) NSString *selectOneBallotInstructions;
+@property(nonatomic, strong) NSArray *selectOneBallotOptions;
+
+// Select-One with note properties
+@property(nonatomic, strong) NSString *selectOneWithNoteBallotTitle;
+@property(nonatomic, strong) NSString *selectOneWithNoteBallotSubtitle;
+@property(nonatomic, strong) NSString *selectOneWithNoteBallotInstructions;
+@property(nonatomic, strong) NSString *selectOneWithNoteBallotNote;
+@property(nonatomic, strong) NSArray *selectOneWithNoteBallotOptions;
+
+// Select-two properties
+@property(nonatomic, strong) NSString *selectTwoBallotTitle;
+@property(nonatomic, strong) NSString *selectTwoBallotInstructions;
+@property(nonatomic, strong) NSArray *selectTwoBallotOptions;
+
+// Ranked-choice properties
+@property(nonatomic, strong) NSString *rankedChoiceBallotTitle;
+@property(nonatomic, strong) NSString *rankedChoiceBallotSubtitle;
+@property(nonatomic, strong) NSString *rankedChoiceBallotInstructions;
+@property(nonatomic, strong) NSArray *rankedChoiceBallotOptions;
+
 @end
 
 @implementation Votem_ExampleTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    // Create some persisted select-one ballot properties for testing
+    self.selectOneBallotTitle = @"For Cheif Dairy Queen";
+    self.selectOneBallotSubtitle = @"Shall Justice Mint C. Chip of the Supreme Court of the State of Ice Create be retained in office for another term?";
+    self.selectOneBallotInstructions = @"Select the checkbox before the word \"YES\" if you wish the official to remain in office. \nSelect the checkbox before the word \"NO\" if you do not wish the official to remain in office";
+    self.selectOneBallotOptions = [self selectOneBallotOptions];
+    
+    // select-one with a note...
+    self.selectOneWithNoteBallotTitle = @"Ballot Issue";
+    self.selectOneWithNoteBallotSubtitle = @"Constiutional Initiative No. 116";
+    self.selectOneWithNoteBallotInstructions = @"Vote by selecting one checkbox";
+    self.selectOneWithNoteBallotNote = @"Make Vanilla (Over Chocolate) the official best flavor. \nThis is a fiercely debated topic and CI - 116 would offically enumerate in writted legislative text in perpetuity which flavor has favor – namely vanilla is better, unequivocally, then chocolate.";
+    self.selectOneWithNoteBallotOptions = [self chooseOneWithNoteBallotOptions];
+
+    // select-two
+    self.selectTwoBallotTitle = @"For State Rep. District M&M";
+    self.selectTwoBallotInstructions = @"Vote for two";
+    self.selectTwoBallotOptions = [self chooseTwoBallotOptions];
+    
+    self.rankedChoiceBallotTitle = @"For Commander in Ice Cream and Vice Ice";
+    self.rankedChoiceBallotSubtitle = @"Ranked choice voting (instant runoff)";
+    self.rankedChoiceBallotInstructions = @"Rank candidates in order of choice. Mark your favorite candidate as first choice, and then indicate your second and additional back-up choices in order of choice. You may rank as many candidates as you want.";
+
 }
 
 - (void)tearDown {
@@ -39,81 +84,75 @@
     }];
 }
 
-- (void)testCanCreateEmptyContestWithName {
+- (void)testCanCreateEmptyNamedContest {
     NSString *contestName = @"Test Contest";
     VTContest *contest = [self contestWithName:contestName];
     XCTAssertTrue([contest.name isEqualToString:contestName]);
 }
 
-- (void)testCanCrateSelectOneBallot {
-    NSString *ballotTitle = @"For Cheif Dairy Queen";
-    NSString *subtitle = @"Shall Justice Mint C. Chip of the Supreme Court of the State of Ice Create be retained in office for another term?";
-    NSString *instructions = @"Select the checkbox before the word \"YES\" if you wish the official to remain in office. \n Select the checkbox before the word \"NO\" if you do not wish the official to remain in office";
-    NSArray *ballotOptions = [self chooseOneBallotOptions];
-    
+- (void)testCanCreateNamedContestOneBallot {
+    NSString *contestName = @"One Ballot Contest";
+    VTContest *contest = [self contestWithName:contestName];
+    XCTAssertTrue([contest.name isEqualToString:contestName]);
+}
+
+- (void)testCanCrateRankedChoiceBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectOneBallot *selectOneBallot = [[VTSelectOneBallot alloc] init];
+    VTRankedChoiceBallot *rankedChoiceBallot = (VTRankedChoiceBallot*)[self ballotWithType:kVTBallotTypeRankedChoice title:self.rankedChoiceBallotTitle subTitle:self.rankedChoiceBallotSubtitle instructions:self.rankedChoiceBallotInstructions ballotNote:nil options:[self rankedChoiceBallotOptions]];
+    
+    XCTAssertNotNil(rankedChoiceBallot);
+    XCTAssertEqualObjects(@(rankedChoiceBallot.type), @(kVTBallotTypeRankedChoice));
+    XCTAssertNotEqualObjects(@(rankedChoiceBallot.type), @(kVTBallotTypeSelectTwo));
+    
+    // After creation is verified, ensure the ballot properties are correctly stored
+    XCTAssertEqual(rankedChoiceBallot.title, self.rankedChoiceBallotTitle);
+    XCTAssertEqual(rankedChoiceBallot.subtitle, self.rankedChoiceBallotSubtitle);
+    XCTAssertEqual(rankedChoiceBallot.instructions, self.rankedChoiceBallotInstructions);
+    XCTAssertTrue(rankedChoiceBallot.options.count == 3);
+}
+
+
+- (void)testCanCrateSelectOneBallot {
+    // Test to ensure the ballot is successfully created and is of the correct type
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[self ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions]];
+    
     XCTAssertNotNil(selectOneBallot);
     XCTAssertEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectOne));
     XCTAssertNotEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectTwo));
     
     // After creation is verified, ensure the ballot properties are correctly stored
-    selectOneBallot.title = ballotTitle;
-    selectOneBallot.subtitle = subtitle;
-    selectOneBallot.instructions = instructions;
-    selectOneBallot.options = ballotOptions;
-    
-    XCTAssertEqual(selectOneBallot.title, ballotTitle);
-    XCTAssertEqual(selectOneBallot.subtitle, subtitle);
-    XCTAssertEqual(selectOneBallot.instructions, instructions);
+    XCTAssertEqual(selectOneBallot.title, self.selectOneBallotTitle);
+    XCTAssertEqual(selectOneBallot.subtitle, self.selectOneBallotSubtitle);
+    XCTAssertEqual(selectOneBallot.instructions, self.selectOneBallotInstructions);
     XCTAssertTrue(selectOneBallot.options.count == 2);
 }
 
 - (void)testCanCrateSelectOneWithNoteBallot {
-    NSString *ballotTitle = @"Ballot Issue";
-    NSString *subtitle = @"Constiutional Initiative No. 116";
-    NSString *instructions = @"Vote by selecting one checkbox";
-    NSArray *ballotOptions = [self chooseOneWithNoteBallotOptions];
-    NSString *ballotNote = @"Make Vanilla (Over Chocolate) the official best flavor";
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[self ballotWithType:kVTBallotTypeSelectOne title:self.selectOneWithNoteBallotTitle subTitle:self.selectOneWithNoteBallotSubtitle instructions:self.selectOneWithNoteBallotInstructions ballotNote:self.selectOneWithNoteBallotNote options:[self chooseOneWithNoteBallotOptions]];
     
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectOneBallot *selectOneBallot = [[VTSelectOneBallot alloc] init];
     XCTAssertNotNil(selectOneBallot);
     XCTAssertEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectOne));
     XCTAssertNotEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeRankedChoice));
     
     // After creation is verified, ensure the ballot properties are correctly stored
-    selectOneBallot.title = ballotTitle;
-    selectOneBallot.subtitle = subtitle;
-    selectOneBallot.instructions = instructions;
-    selectOneBallot.options = ballotOptions;
-    selectOneBallot.ballotNote = ballotNote;
-    
-    XCTAssertEqual(selectOneBallot.title, ballotTitle);
-    XCTAssertEqual(selectOneBallot.subtitle, subtitle);
-    XCTAssertEqual(selectOneBallot.instructions, instructions);
-    XCTAssertEqual(selectOneBallot.ballotNote, ballotNote);
+    XCTAssertEqual(selectOneBallot.title, self.selectOneWithNoteBallotTitle);
+    XCTAssertEqual(selectOneBallot.subtitle, self.selectOneWithNoteBallotSubtitle);
+    XCTAssertEqual(selectOneBallot.instructions, self.selectOneWithNoteBallotInstructions);
+    XCTAssertEqual(selectOneBallot.ballotNote, self.selectOneWithNoteBallotNote);
     XCTAssertTrue(selectOneBallot.options.count == 2);
 }
 
 - (void)testCanCreateSelectTwoBallot {
-    NSString *ballotTitle = @"For State Rep. District M&M";
-    NSString *instructions = @"Vote for two";
-    NSArray *ballotOptions = [self chooseTwoBallotOptions];
-    
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectTwoBallot *selectTwoBallot = [[VTSelectTwoBallot alloc] init];
+    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[self ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions]];
     XCTAssertNotNil(selectTwoBallot);
     XCTAssertEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectTwo));
     XCTAssertNotEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectOne));
     
     // After creation is verified, ensure the ballot properties are correctly stored
-    selectTwoBallot.title = ballotTitle;
-    selectTwoBallot.instructions = instructions;
-    selectTwoBallot.options = ballotOptions;
-    
-    XCTAssertEqual(selectTwoBallot.title, ballotTitle);
-    XCTAssertEqual(selectTwoBallot.instructions, instructions);
+    XCTAssertEqual(selectTwoBallot.title, self.selectTwoBallotTitle);
+    XCTAssertEqual(selectTwoBallot.instructions, self.selectTwoBallotInstructions);
     XCTAssertTrue(selectTwoBallot.options.count == 3);
 }
 
@@ -124,9 +163,9 @@
 }
 
 - (NSArray *)rankedChoiceBallotOptions {
-    NSString *option1 = @"Reese WithoutASpoon - Democrat for C.I.C \n Cherry Garcia - Democrat for Vice Ice";
-    NSString *option2 = @"Choco 'Chip' Dough - Republican for C.I.C \n Carmela Coney - Republican for Vice Ice";
-    NSString *option3 = @"Magic Browny - Independent for C.I.C \n Phish Food - Independent for Vice Ice";
+    NSString *option1 = @"Reese WithoutASpoon - Democrat for C.I.C \nCherry Garcia - Democrat for Vice Ice";
+    NSString *option2 = @"Choco 'Chip' Dough - Republican for C.I.C \nCarmela Coney - Republican for Vice Ice";
+    NSString *option3 = @"Magic Browny - Independent for C.I.C \nPhish Food - Independent for Vice Ice";
     
     NSArray *rankedChoiceOptions = [NSArray arrayWithObjects:option1, option2, option3, nil];
     
@@ -146,6 +185,47 @@
 - (NSArray *)chooseOneWithNoteBallotOptions {
     NSArray *chooseTwoOptions = [NSArray arrayWithObjects:@"YES ON CI - 116 (FOR VANILLA)", @"NO ON 116 (NO ON VANILLA)", nil];
     return chooseTwoOptions;
+}
+
+-(VTBallot *)ballotWithType:(VTBallotType)type
+                                title:(NSString *)title
+                             subTitle:(NSString *)subtitle
+                         instructions:(NSString *)instructions
+                           ballotNote:(NSString *)ballotNote
+                              options:(NSArray *)options {
+    
+    VTBallot *ballot;
+    
+    if (type == kVTBallotTypeSelectOne) {
+        VTSelectOneBallot *selectOneBallot = [[VTSelectOneBallot alloc] init];
+        ballot = selectOneBallot;
+    } else if (type == kVTBallotTypeSelectTwo) {
+        VTSelectTwoBallot *selectOneBallot = [[VTSelectTwoBallot alloc] init];
+        ballot = selectOneBallot;
+    } else if (type == kVTBallotTypeRankedChoice) {
+        VTRankedChoiceBallot *selectOneBallot = [[VTRankedChoiceBallot alloc] init];
+        ballot = selectOneBallot;
+    } else {
+        // We couldn't match a ballot type to a class, so return nil for now
+        return nil;
+    }
+
+    // After creation is verified, ensure the required ballot properties are stored
+    ballot.title = title;
+    ballot.options = options;
+    
+    // If any optional fields have been provided, set them here, otherwise, leave them nil
+    if (subtitle) {
+        ballot.subtitle = subtitle;
+    }
+    if (instructions) {
+        ballot.instructions = instructions;
+    }
+    if (ballotNote) {
+        ballot.ballotNote = ballotNote;
+    }
+    
+    return ballot;
 }
 
 
