@@ -28,7 +28,9 @@ typedef NS_ENUM(NSUInteger, VTBallotType) {
 @property(nonatomic, assign) BOOL enabled;
 
 @optional
+@property(nonatomic, strong) NSString *subtitle;
 @property(nonatomic, strong) NSString *instructions;
+@property(nonatomic, strong) NSString *ballotNote;
 
 @end
 

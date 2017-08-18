@@ -9,8 +9,9 @@
 #import "VTSelectOneBallot.h"
 
 @implementation VTSelectOneBallot
-
-@dynamic instructions;
+@synthesize instructions = _instructions;
+@synthesize subtitle = _subtitle;
+@synthesize ballotNote = _ballotNote;
 
 - (instancetype) init {
     self = [super init];

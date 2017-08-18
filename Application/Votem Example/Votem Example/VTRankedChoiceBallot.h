@@ -12,5 +12,7 @@
 @interface VTRankedChoiceBallot : VTBallot
 
 @property(nonatomic, strong) NSString *instructions;
+@property(nonatomic, strong) NSString *subtitle;
+@property(nonatomic, strong) NSString *ballotNote;
 
 @end
