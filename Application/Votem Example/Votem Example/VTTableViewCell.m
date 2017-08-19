@@ -7,6 +7,7 @@
 //
 
 #import "VTTableViewCell.h"
+#import "UIColor+VTColors.h"
 
 @implementation VTTableViewCell
 

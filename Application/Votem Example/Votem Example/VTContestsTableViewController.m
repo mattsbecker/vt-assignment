@@ -12,6 +12,7 @@
 #import "VTTableViewCell.h"
 #import "VTContest.h"
 #import "VTRouter.h"
+#import "NSDate+VTDateUtils.h"
 
 @interface VTContestsTableViewController ()
 
@@ -34,14 +35,15 @@
     NSString *placeholderString = [NSString stringWithFormat:@"%@ - %zd ballot(s)", objectForRow.name, objectForRow.availableBallots.count];
     
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier] forIndexPath:indexPath];
-    //NSString *placeholderString = [self.coordinator registrationKeyForValue:(NSUInteger)[super objectForRowAtIndexPath:indexPath]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = placeholderString;
+    cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CONTESTS.CONTEST_END_DATE", @"Contest ends at string"), [objectForRow.endDate dateAsDayMonthYearString]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+
     VTContest *objectForRow = (VTContest*)[self objectForRowAtIndexPath:indexPath];
     VTBallotTableViewCoordinator *coordinator = [[VTBallotTableViewCoordinator alloc] initWithContest:objectForRow];
     VTBallotListTableViewController *vc = [[VTBallotListTableViewController alloc] initWithCoordinator:coordinator];

@@ -7,7 +7,10 @@
 //
 
 #import "VTBallotListTableViewController.h"
+#import "VTBallotViewController.h"
 #import "VTBallot.h"
+#import "VTRouter.h"
+#import <Masonry/Masonry.h>
 
 @interface VTBallotListTableViewController ()
 
@@ -20,6 +23,10 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -30,11 +37,25 @@
     NSString *placeholderString = [NSString stringWithFormat:@"%@ - %@ ballot(s)", objectForRow.title, @(objectForRow.type)];
     
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier]];
+    cell.tintColor = [UIColor vt_highlightBrandColor];
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.text = placeholderString;
     cell.detailTextLabel.text = objectForRow.instructions;
     cell.detailTextLabel.numberOfLines = 0;
+    
+    if (objectForRow.selections.count > 0) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    VTBallot *objectForRow = (VTBallot *)[self objectForRowAtIndexPath:indexPath];
+    VTBallotViewController *vc = [[VTBallotViewController alloc] initWithNibName:@"VTBallotViewController" bundle:nil];
+    [VTRouter presentViewControllerModally:vc];
+    vc.ballot = objectForRow;
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -14,11 +14,11 @@
 
 @implementation VTRouter
 
-+ (void)routeToSignIn {
-    // Create a new window and navigation controller
++ (void)createApplicationRoot {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UIViewController *viewController = [[VTSignInViewController alloc] initWithNibName:@"VTSignInViewController" bundle:nil];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    VTContestsViewCoordinator *coordinator = [[VTContestsViewCoordinator alloc] init];
+    VTContestsTableViewController *vc = [[VTContestsTableViewController alloc] initWithCoordinator:coordinator];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     
     // Show the window and set it's root view controller
     [window makeKeyAndVisible];
@@ -26,6 +26,13 @@
     
     // Set the application's window to the new window
     [[UIApplication sharedApplication].delegate setWindow:window];
+    
+}
+
++ (void)routeToSignIn {
+    // Create a new window and navigation controller
+    VTSignInViewController *vc = [[VTSignInViewController alloc] initWithNibName:@"VTSignInViewController" bundle:nil];
+    [[VTRouter navigationController] presentViewController:vc animated:NO completion:nil];
 }
 
 + (void)presentViewControllerModally:(UIViewController*)viewController {
@@ -40,10 +47,10 @@
 + (void)routeSignInSuccess {
     VTContestsViewCoordinator *coordinator = [[VTContestsViewCoordinator alloc] init];
     VTContestsTableViewController *vc = [[VTContestsTableViewController alloc] initWithCoordinator:coordinator];
-    
-//    UINavigationController *newNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
-    UINavigationController *rootNavigationController = [VTRouter navigationController];
-    [rootNavigationController pushViewController:vc animated:YES];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+
+    [[VTRouter rootViewController] dismissViewControllerAnimated:YES completion:nil];
+    [vc removeFromParentViewController];
 }
 
 + (void)pushViewController:(UIViewController *)viewController {

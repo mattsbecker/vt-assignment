@@ -13,6 +13,7 @@
 #import "VTRankedChoiceBallot.h"
 #import "VTSelectOneBallot.h"
 #import "VTSelectTwoBallot.h"
+#import "NSDate+VTDateUtils.h"
 
 NSInteger const kVTTestableContestId = 100;
 
@@ -127,6 +128,8 @@ NSInteger const kVTTestableContestId = 100;
     XCTAssertTrue([contest.name isEqualToString:contestName]);
     XCTAssertTrue(contest.contestId.integerValue == kVTTestableContestId);
     XCTAssertTrue(contest.enabled);
+    XCTAssertNotNil(contest.startDate);
+    XCTAssertNotNil(contest.endDate);
     
     contest.availableBallots = @[selectOneBallot];
     
@@ -218,6 +221,49 @@ NSInteger const kVTTestableContestId = 100;
     XCTAssertTrue(selectTwoBallot.options.count == 3);
 }
 
+- (void)testCanCastVoteForSelectTwoBallot {
+    // Test to ensure the ballot is successfully created and is of the correct type
+    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions]];
+    XCTAssertNotNil(selectTwoBallot);
+    XCTAssertEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectTwo));
+    XCTAssertNotEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectOne));
+    
+    // After creation is verified, ensure the ballot properties are correctly stored
+    XCTAssertEqual(selectTwoBallot.title, self.selectTwoBallotTitle);
+    XCTAssertEqual(selectTwoBallot.instructions, self.selectTwoBallotInstructions);
+    XCTAssertTrue(selectTwoBallot.options.count == 3);
+    
+    // Cast the first selection
+    [selectTwoBallot selectOption:selectTwoBallot.options[0]];
+    XCTAssertEqual(selectTwoBallot.selections[0], selectTwoBallot.options[0]);
+    NSLog(@"The user casted a vote for : %@, the option title is: %@", selectTwoBallot.title, selectTwoBallot.selections[0].title);
+    
+    // Then the second selection, which should be added to the array
+    [selectTwoBallot selectOption:selectTwoBallot.options[1]];
+    XCTAssertEqual(selectTwoBallot.selections[1], selectTwoBallot.options[1]);
+    NSLog(@"The user casted a vote for : %@, the option title is: %@", selectTwoBallot.title, selectTwoBallot.selections[1].title);
+    // Ensure the count is now at two
+    XCTAssertTrue(selectTwoBallot.selections.count == 2);
+    
+    // Now attempt to add a third selection, which should insert the new option in the first position
+    [selectTwoBallot selectOption:selectTwoBallot.options[2]];
+    XCTAssertEqual(selectTwoBallot.selections[0], selectTwoBallot.options[2]);
+    NSLog(@"The user casted a vote for : %@, the option title is: %@", selectTwoBallot.title, selectTwoBallot.selections[0].title);
+}
+
+- (void)testNSDateFormattedAsDayMonthYear {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
+    NSString *dateAsString = [date dateAsDayMonthYearString];
+    XCTAssertTrue([dateAsString isEqualToString:@"31-12-1969"]);
+}
+
+- (void)testNSDateFormattedAsDayMonthYearTime {
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
+    NSString *dateAsString = [date dateAsDayMonthYearTimeString];
+    XCTAssertTrue([dateAsString isEqualToString:@"31-12-1969 7:00 PM"]);
+    
+}
+
 - (VTContest *)contestWithName:(NSString *)contestName {
     VTContest *contest = [[VTContest alloc] init];
     contest.name = contestName;
@@ -241,12 +287,15 @@ NSInteger const kVTTestableContestId = 100;
 
 - (NSArray *)chooseTwoBallotOptions {
     VTBallotOption *option1 = [[VTBallotOption alloc] init];
+    option1.optionId = @100;
     option1.title = @"P. Nut Butter (REPUBLICAN)";
     
     VTBallotOption *option2 = [[VTBallotOption alloc] init];
+    option1.optionId = @102;
     option2.title = @"Cream C. Kol (INDEPENDENT)";
 
     VTBallotOption *option3 = [[VTBallotOption alloc] init];
+    option1.optionId = @102;
     option3.title = @"Marsh Mallow (DEMOCRAT)";
 
     NSArray *chooseTwoOptions = [NSArray arrayWithObjects:option1, option2, option3, nil];

@@ -28,4 +28,10 @@
     }
 }
 
+- (void)deselectOption:(VTBallotOption *)option {
+    if ([self.selections containsObject:option]) {
+        self.selections = @[];
+    }
+}
+
 @end

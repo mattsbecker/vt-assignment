@@ -48,6 +48,10 @@
 		C9BA8EEE1F46BE2F006F5B3C /* VTBallotListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EEC1F46BE2F006F5B3C /* VTBallotListTableViewController.m */; };
 		C9BA8EEF1F46BE2F006F5B3C /* VTBallotListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EED1F46BE2F006F5B3C /* VTBallotListTableViewController.xib */; };
 		C9BA8EF21F46BF54006F5B3C /* VTBallotTableViewCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EF11F46BF54006F5B3C /* VTBallotTableViewCoordinator.m */; };
+		C9BA8EF71F47DF2B006F5B3C /* VTBallotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8EF51F47DF2B006F5B3C /* VTBallotViewController.m */; };
+		C9BA8EF81F47DF2B006F5B3C /* VTBallotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EF61F47DF2B006F5B3C /* VTBallotViewController.xib */; };
+		C9BA8EFA1F47EEC3006F5B3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BA8EF91F47EEC3006F5B3C /* QuartzCore.framework */; };
+		C9BA8F621F4898B5006F5B3C /* VTBallotController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8F611F4898B5006F5B3C /* VTBallotController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +135,12 @@
 		C9BA8EED1F46BE2F006F5B3C /* VTBallotListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTBallotListTableViewController.xib; sourceTree = "<group>"; };
 		C9BA8EF01F46BF54006F5B3C /* VTBallotTableViewCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTBallotTableViewCoordinator.h; sourceTree = "<group>"; };
 		C9BA8EF11F46BF54006F5B3C /* VTBallotTableViewCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTBallotTableViewCoordinator.m; sourceTree = "<group>"; };
+		C9BA8EF41F47DF2B006F5B3C /* VTBallotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTBallotViewController.h; sourceTree = "<group>"; };
+		C9BA8EF51F47DF2B006F5B3C /* VTBallotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTBallotViewController.m; sourceTree = "<group>"; };
+		C9BA8EF61F47DF2B006F5B3C /* VTBallotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTBallotViewController.xib; sourceTree = "<group>"; };
+		C9BA8EF91F47EEC3006F5B3C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C9BA8F601F4898B5006F5B3C /* VTBallotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTBallotController.h; sourceTree = "<group>"; };
+		C9BA8F611F4898B5006F5B3C /* VTBallotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTBallotController.m; sourceTree = "<group>"; };
 		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A48DC33C0DCE803145CBD92 /* libPods-Votem Example.a in Frameworks */,
+				C9BA8EFA1F47EEC3006F5B3C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +261,9 @@
 		C984EE4C1F41467B00B9C832 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9BA8EF31F47CCC7006F5B3C /* Network Controllers */,
+				C9BA8F601F4898B5006F5B3C /* VTBallotController.h */,
+				C9BA8F611F4898B5006F5B3C /* VTBallotController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +303,9 @@
 				C9BA8EEB1F46BE2F006F5B3C /* VTBallotListTableViewController.h */,
 				C9BA8EEC1F46BE2F006F5B3C /* VTBallotListTableViewController.m */,
 				C9BA8EED1F46BE2F006F5B3C /* VTBallotListTableViewController.xib */,
+				C9BA8EF41F47DF2B006F5B3C /* VTBallotViewController.h */,
+				C9BA8EF51F47DF2B006F5B3C /* VTBallotViewController.m */,
+				C9BA8EF61F47DF2B006F5B3C /* VTBallotViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -345,9 +362,17 @@
 			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
+		C9BA8EF31F47CCC7006F5B3C /* Network Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Network Controllers";
+			sourceTree = "<group>";
+		};
 		E904E517FADF24EA1438AD80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C9BA8EF91F47EEC3006F5B3C /* QuartzCore.framework */,
 				E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */,
 				02E6C07086096FC4ABCCA86A /* libPods-Votem ExampleTests.a */,
 			);
@@ -457,6 +482,7 @@
 			files = (
 				C984EE691F41645B00B9C832 /* Localizable.strings in Resources */,
 				C9BA8EAE1F427378006F5B3C /* VTTableViewCell.xib in Resources */,
+				C9BA8EF81F47DF2B006F5B3C /* VTBallotViewController.xib in Resources */,
 				C9BA8EE11F454871006F5B3C /* VTContestsTableViewController.xib in Resources */,
 				C984EE551F414DA200B9C832 /* VTSignInViewController.xib in Resources */,
 				C984EE491F413F7D00B9C832 /* Settings.bundle in Resources */,
@@ -584,6 +610,7 @@
 				C9BA8EE71F46A6F1006F5B3C /* VTBallotFactory.m in Sources */,
 				C9BA8ED61F4544C1006F5B3C /* VTRankedChoiceBallot.m in Sources */,
 				C9BA8EA21F426CF8006F5B3C /* VTTableViewCoordinator.m in Sources */,
+				C9BA8F621F4898B5006F5B3C /* VTBallotController.m in Sources */,
 				C9BA8EC81F45406F006F5B3C /* VTContest.m in Sources */,
 				C9BA8EC51F453670006F5B3C /* VTContestsViewCoordinator.m in Sources */,
 				C984EE5C1F414E8500B9C832 /* UIColor+VTColors.m in Sources */,
@@ -594,6 +621,7 @@
 				C984EE531F41472400B9C832 /* VTRouter.m in Sources */,
 				C984EE281F3F92A100B9C832 /* VTSignInViewController.m in Sources */,
 				C9BA8EB41F428269006F5B3C /* VTCreateAccountViewController.m in Sources */,
+				C9BA8EF71F47DF2B006F5B3C /* VTBallotViewController.m in Sources */,
 				C9BA8EE41F46A39B006F5B3C /* NSDate+VTDateUtils.m in Sources */,
 				C9BA8EA51F426E74006F5B3C /* VTCoordinatorTableViewController.m in Sources */,
 				C984EE251F3F92A100B9C832 /* AppDelegate.m in Sources */,
@@ -734,6 +762,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2JUZD3ZDTY;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"\"${PODS_ROOT}/Headers/Public/JVFloatLabeledTextField\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SAMKeychain\"",
+				);
 				INFOPLIST_FILE = "Votem Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -749,6 +787,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2JUZD3ZDTY;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"\"${PODS_ROOT}/Headers/Public/JVFloatLabeledTextField\"",
+					"\"${PODS_ROOT}/Headers/Public/Mantle\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SAMKeychain\"",
+				);
 				INFOPLIST_FILE = "Votem Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -10,7 +10,7 @@
 #import "VTRouter.h"
 
 @interface AppDelegate ()
-
+@property BOOL loggedIn;
 @end
 
 @implementation AppDelegate
@@ -18,7 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [VTRouter routeToSignIn];
+    [VTRouter createApplicationRoot];
+    _loggedIn = NO;
+    
+    if (!_loggedIn) {
+        [VTRouter routeToSignIn];
+    }
     return YES;
 }
 

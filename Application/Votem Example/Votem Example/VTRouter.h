@@ -12,6 +12,11 @@
 @interface VTRouter : NSObject
 
 /**
+Create the application root navigation controller and initial contest view controller
+ */
++ (void)createApplicationRoot;
+
+/**
  Presents the sign in view controller in a root navigation controller
  */
 + (void)routeToSignIn;
