@@ -84,8 +84,8 @@
                 <constraint firstItem="O7Q-hs-wxj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zoO-ll-kRV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
-            <nil key="simulatedBottomBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
         </view>
     </objects>
 </document>

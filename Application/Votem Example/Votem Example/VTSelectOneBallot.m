@@ -16,6 +16,7 @@
 - (instancetype) init {
     self = [super init];
     self.type = kVTBallotTypeSelectOne;
+    self.allowedNumberOfSelections = 1;
     self.selections = [[NSArray<VTBallotOption *> alloc] init];
     self.options = [NSArray array];
     return self;
@@ -26,11 +27,21 @@
     if (![self.selections containsObject:option]) {
         self.selections = @[option];
     }
+    self.submittable = [self evaluateSubmittable];
 }
 
 - (void)deselectOption:(VTBallotOption *)option {
     if ([self.selections containsObject:option]) {
         self.selections = @[];
+    }
+    self.submittable = [self evaluateSubmittable];
+}
+
+- (BOOL)evaluateSubmittable {
+    if (self.selections.count == self.allowedNumberOfSelections) {
+        return YES;
+    } else {
+        return NO;
     }
 }
 

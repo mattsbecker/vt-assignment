@@ -19,7 +19,8 @@
 
 - (instancetype) init {
     self = [super init];
-    self.mutableSelections = [NSMutableArray<VTBallotOption*> arrayWithCapacity:2];
+    self.allowedNumberOfSelections = 2;
+    self.mutableSelections = [NSMutableArray<VTBallotOption*> arrayWithCapacity:self.allowedNumberOfSelections];
     self.type = kVTBallotTypeSelectTwo;
     return self;
 }
@@ -42,6 +43,8 @@
         [self.mutableSelections addObject:option];
     }
     self.selections = [NSArray arrayWithArray:self.mutableSelections];
+    self.submittable = [self evaluateSubmittable];
+    // Determine if this ballot is submittable – for this type, if the selections does not equal the allowedNumberOfSelections, it cannot be submitted
 }
 
 - (void)deselectOption:(VTBallotOption *)option {
@@ -50,6 +53,15 @@
         [self rebaseSelections];
     }
     self.selections = [NSArray arrayWithArray:self.mutableSelections];
+    self.submittable = [self evaluateSubmittable];
+}
+
+- (BOOL)evaluateSubmittable {
+    if (self.selections.count == self.allowedNumberOfSelections) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 // Reindex the array after the removal of a selection, shifting any post-nil objects back one index
@@ -76,7 +88,7 @@
 
 // Retrieves the next index that's available for selection insertion; uses a round-robin style selection style
 - (NSInteger)nextAvaliableSelectionIndex {
-    NSUInteger max = 2;
+    NSUInteger max = self.allowedNumberOfSelections;
     if (self.selections.count <= (max - 1)) {
         return self.selections.count;
     } else if (self.selections.count == max - 1) {
@@ -85,5 +97,7 @@
         return 0;
     }
 }
+
+
 
 @end

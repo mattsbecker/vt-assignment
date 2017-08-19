@@ -29,6 +29,7 @@ extern NSString const *kVTBallotSelectionValueKey;
 @property(nonatomic, strong) NSArray<VTBallotOption *> *selections;
 @property(nonatomic, assign) VTBallotType type;
 @property(nonatomic, assign) BOOL enabled;
+@property(nonatomic, assign) NSInteger allowedNumberOfSelections;
 
 @optional
 @property(nonatomic, strong) NSString *subtitle;
@@ -46,11 +47,14 @@ extern NSString const *kVTBallotSelectionValueKey;
 @property(nonatomic, strong) NSArray<VTBallotOption *> *selections;
 @property(nonatomic, assign) VTBallotType type;
 @property(nonatomic, assign) BOOL enabled;
+@property(nonatomic, assign) NSInteger allowedNumberOfSelections;
 @property(nonatomic, readonly) NSArray<NSObject*> *keyValueObservers;
+@property(nonatomic, assign) BOOL submittable;
 
 - (void)selectOption:(VTBallotOption *)option;
 - (void)deselectOption:(VTBallotOption *)option;
 - (void)addKeyValueObserver:(NSObject*)keyValueObserver;
 - (void)removeKeyValueObserver:(NSObject*)keyValueObserver;
+- (BOOL)evaluateSubmittable;
 
 @end

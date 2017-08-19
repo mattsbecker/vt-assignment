@@ -17,7 +17,22 @@ NSString const *kVTBallotSelectionValueKey = @"selections";
 @implementation VTBallot
 @synthesize keyValueObservers = _keyValueObservers;
 
+- (instancetype)init {
+    self = [super init];
+    self.submittable = NO;
+    self.enabled = YES;
+    return self;
+}
+
 - (void)selectOption:(VTBallotOption *)option {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+- (void)deselectOption:(VTBallotOption *)option {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+- (BOOL)evaluateSubmittable {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
 }
 

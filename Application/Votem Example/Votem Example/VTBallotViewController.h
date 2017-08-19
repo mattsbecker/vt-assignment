@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VTBallot.h"
+#import "VTContest.h"
 
 @interface VTBallotViewController : UIViewController
 @property (nonatomic, assign) VTBallot *ballot;
+@property (nonatomic, assign) VTContest *contest;
 @end

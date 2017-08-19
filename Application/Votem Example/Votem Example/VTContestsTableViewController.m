@@ -47,6 +47,7 @@
     VTContest *objectForRow = (VTContest*)[self objectForRowAtIndexPath:indexPath];
     VTBallotTableViewCoordinator *coordinator = [[VTBallotTableViewCoordinator alloc] initWithContest:objectForRow];
     VTBallotListTableViewController *vc = [[VTBallotListTableViewController alloc] initWithCoordinator:coordinator];
+    vc.contest = objectForRow;
     vc.title = objectForRow.name;
     [VTRouter pushViewController:vc];
 }

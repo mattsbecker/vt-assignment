@@ -18,5 +18,8 @@
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, assign) BOOL enabled;
 @property (nonatomic, strong) NSArray<VTBallot*> *availableBallots;
+@property (nonatomic, readonly) BOOL completed;
+
+- (NSDictionary<NSString*, NSNumber*> *)evaluateContestCompletionStatus;
 
 @end

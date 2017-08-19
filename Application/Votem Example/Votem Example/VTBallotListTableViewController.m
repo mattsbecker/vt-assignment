@@ -8,7 +8,6 @@
 
 #import "VTBallotListTableViewController.h"
 #import "VTBallotViewController.h"
-#import "VTBallot.h"
 #import "VTRouter.h"
 #import <Masonry/Masonry.h>
 
@@ -53,6 +52,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     VTBallot *objectForRow = (VTBallot *)[self objectForRowAtIndexPath:indexPath];
     VTBallotViewController *vc = [[VTBallotViewController alloc] initWithNibName:@"VTBallotViewController" bundle:nil];
+    vc.contest = self.contest;
+    
     [VTRouter presentViewControllerModally:vc];
     vc.ballot = objectForRow;
 

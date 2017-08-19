@@ -17,8 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *ballotMeasureSubtitle;
 @property (strong, nonatomic) IBOutlet UILabel *ballotMeasureNotesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ballotMeasureInstructionsLabel;
-
-
 @end
 
 @implementation VTBallotViewController
@@ -36,6 +34,14 @@
     }
     [self.ballotMeasureTableView reloadData];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    if (self.ballot && self.contest != nil) {
+        [self configureToolbar];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,6 +107,49 @@
     [tableView registerNib:[VTTableViewCell vt_tableViewCellNib] forCellReuseIdentifier:[VTTableViewCell vt_reuseIdentifier]];
 }
 
+- (void)configureToolbar {
+    
+    // Retrieve the completion status of the current contest
+    NSDictionary *contestStatus = [self.contest evaluateContestCompletionStatus];
+    
+    // Configure the toolbar style
+    self.navigationController.toolbar.barTintColor = [UIColor vt_tertiaryBrandColor];
+    self.navigationController.toolbar.translucent = YES;
+    
+    // Create our buttons
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStylePlain target:nil action:nil];
+    leftItem.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *spacerLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:nil action:nil];
+    rightItem.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *spacerRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    
+    NSNumber *completed = (NSNumber*)contestStatus[@"completed"];
+    NSNumber *avaialable = (NSNumber*)contestStatus[@"available"];
+    NSNumber *completedBool = (NSNumber*)contestStatus[@"isComplete"];
+    BOOL completedValue = completedBool.boolValue;
+    
+    // Create the submit/completed string
+    NSString *submitString = [NSString stringWithFormat:@"%zd of %zd Completed", completed.integerValue, avaialable.integerValue];
+    if (completedValue) {
+        submitString = @"Complete and Submit";
+    }
+    
+    // Create the submit item
+    UIBarButtonItem *submitItem = [[UIBarButtonItem alloc] initWithTitle:submitString style:UIBarButtonItemStylePlain target:nil action:nil];
+
+    if (!completedBool) {
+        submitItem.tintColor = [UIColor colorWithWhite:.90 alpha:1.0];
+        submitItem.enabled = NO;
+    } else {
+        submitItem.tintColor = [UIColor whiteColor];
+        submitItem.enabled = YES;
+    }
+    
+    NSArray<UIBarButtonItem*> *barButtonItems = @[leftItem, spacerLeft, submitItem, spacerRight, rightItem];
+    [self.navigationController.toolbar setItems:barButtonItems animated:YES];
+}
+
 - (void)configureViewForBallot {
     if (!self.ballot) {
         return;
@@ -108,7 +157,6 @@
     self.ballotMeasureTitle.text = self.ballot.title != nil ? self.ballot.title : @"";
     self.ballotMeasureSubtitle.text = self.ballot.subtitle != nil ? self.ballot.subtitle : @"";
     self.ballotMeasureNotesLabel.text = self.ballot.ballotNote != nil ? self.ballot.ballotNote : @"";
-    //self.ballotMeasureInstructionsLabel.text = self.ballot.instructions != nil ? self.ballot.instructions : @"";
 }
 
 

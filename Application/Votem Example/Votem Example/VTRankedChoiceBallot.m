@@ -16,6 +16,7 @@
 - (instancetype) init {
     self = [super init];
     self.type = kVTBallotTypeRankedChoice;
+    self.allowedNumberOfSelections = self.selections.count;
     return self;
 }
 
