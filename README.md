@@ -1,4 +1,4 @@
-## Votem Coding Assignment
+## Coding Assignment
 This repository contains an example iOS application and supporting documentation for a product-related coding exercise for Votem.
 
 ## Contents of this repository
