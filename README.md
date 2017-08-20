@@ -13,9 +13,13 @@ The application provides the following functionality:
 * View available Contests
 * View all ballots present in a contest
 * Provides UI and data model support for single selection, multiple selection, and ordered selection Ballot types. All components use native iOS controls in order to ensure users are as familiar with interface paradigms as possible.
+* Provides high level write-in support for Ballot types
+* All Contest and Ballot object types are unit tested in a functional manner (create a contest, assign it ballots with types, ensure selections can be made, etc.)
 
 ## Notes
 * Networking support could easily be added and is "in progress." High level Contest, Ballot, and BallotOption objects can be intialized independently, making serialization from network responses easy.
+* Preparations for network persistence have been written, however the network layer was not implemented.
+* The user's progress is currently stored in memory during the application's active lifecycle. Disk persistence could be added using CoreData object representations.
 
 
 ## iOS Application Requirements and Dependencies
