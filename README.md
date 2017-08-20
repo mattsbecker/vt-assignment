@@ -6,18 +6,42 @@ This repository contains an example application and supporting documentation for
 
 * Application - An Xcode project containing the iOS application which fulfils this exercise.
 
+## About this application
+The application provides the following functionality:
+* Sign In (enter any id and password)
+* Register
+* View available Contests
+* View all ballots present in a contest
+* Provides UI and data model support for single selection, multiple selection, and ordered selection Ballot types. All components use native iOS controls in order to ensure users are as familiar with interface paradigms as possible.
+
+## Notes
+* Networking support could easily be added and is "in progress." High level Contest, Ballot, and BallotOption objects can be intialized independently, making serialization from network responses easy.
+
+
 ## iOS Application Requirements and Dependencies
 
 * Requires a device running iOS 9 or later
 * Requires at least Xcode 8.3
 * Requires Cocoapods (https://cocoapods.org) for dependency management
-
     `sudo gem install cocoapods`
     
 * Pods installed via Cocoapods are committed to this repository, so it isn't necessary to run `pod install` after cloning    
 
-* TODO - MSB: include deployment task documentation here
+* Specifically designed with the iPhone as of now; the application uses autolayout so views will scale, however the results will not be optimal.
 
 ## Dependencies
 
 Dependencies used for this application are:
+* JVFloatLabeledTextField
+* AFNetworking
+* Masonry
+* Mantle
+* SAMKeychain
+* IQKeyboardManager
+
+## Running the Application
+* Clone the repository
+* Open `Application/Votem Example/Votem Example.xcworkspace`
+* Run the device in an iOS Simulator OR
+* Apply a valid Provisioning Profile in order to run the application on a device
+
