@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VTBallotViewController">
             <connections>
+                <outlet property="actionBarButtonItem" destination="ahs-WS-r4P" id="4cH-4s-hXW"/>
                 <outlet property="ballotMeasureInstructionsLabel" destination="gDu-Wx-QgU" id="AUo-Xs-iXb"/>
                 <outlet property="ballotMeasureNotesLabel" destination="gwC-0S-how" id="0f2-Rf-ssM"/>
                 <outlet property="ballotMeasureSubtitle" destination="FXL-3N-gv6" id="Ek9-q6-DpC"/>
@@ -26,39 +27,49 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7Q-hs-wxj">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
+                        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1V-Iv-4Id">
+                            <rect key="frame" x="0.0" y="60" width="375" height="44"/>
+                            <items>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="TXr-DP-ShT"/>
+                                <barButtonItem title="Next" style="plain" id="ahs-WS-r4P">
+                                    <color key="tintColor" red="0.98431372549999996" green="0.55294117649999996" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ballot Measure Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWr-S3-eVh">
-                            <rect key="frame" x="20" y="70" width="335" height="26"/>
+                            <rect key="frame" x="20" y="130" width="335" height="26"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ballot Measure Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXL-3N-gv6">
-                            <rect key="frame" x="20" y="100" width="335" height="18"/>
+                            <rect key="frame" x="20" y="160" width="335" height="18"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                             <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ballot Measure Notes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwC-0S-how">
-                            <rect key="frame" x="20" y="126" width="335" height="17"/>
+                            <rect key="frame" x="20" y="186" width="335" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ballot measure Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDu-Wx-QgU">
-                            <rect key="frame" x="20" y="159" width="335" height="17"/>
+                            <rect key="frame" x="20" y="219" width="335" height="17"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Fhy-z3-TJC">
-                            <rect key="frame" x="0.0" y="184" width="375" height="483"/>
+                            <rect key="frame" x="0.0" y="244" width="375" height="423"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="gwC-0S-how" firstAttribute="trailing" secondItem="FXL-3N-gv6" secondAttribute="trailing" id="4YE-0d-fMI"/>
-                        <constraint firstItem="YWr-S3-eVh" firstAttribute="top" secondItem="O7Q-hs-wxj" secondAttribute="top" constant="70" id="KGt-zF-qeA"/>
+                        <constraint firstAttribute="trailing" secondItem="W1V-Iv-4Id" secondAttribute="trailing" id="Dj8-OR-3SV"/>
+                        <constraint firstItem="W1V-Iv-4Id" firstAttribute="top" secondItem="O7Q-hs-wxj" secondAttribute="top" constant="60" id="LQv-0N-DKW"/>
                         <constraint firstItem="Fhy-z3-TJC" firstAttribute="leading" secondItem="O7Q-hs-wxj" secondAttribute="leading" id="LzP-2b-nIG"/>
                         <constraint firstAttribute="bottom" secondItem="Fhy-z3-TJC" secondAttribute="bottom" id="Mhm-Pd-9uL"/>
                         <constraint firstItem="FXL-3N-gv6" firstAttribute="trailing" secondItem="YWr-S3-eVh" secondAttribute="trailing" id="SeD-xm-GDI"/>
@@ -67,6 +78,8 @@
                         <constraint firstItem="FXL-3N-gv6" firstAttribute="top" secondItem="YWr-S3-eVh" secondAttribute="bottom" constant="4" id="dbG-xK-Sb0"/>
                         <constraint firstItem="gwC-0S-how" firstAttribute="leading" secondItem="FXL-3N-gv6" secondAttribute="leading" id="e8N-Ho-CNd"/>
                         <constraint firstItem="Fhy-z3-TJC" firstAttribute="top" secondItem="gDu-Wx-QgU" secondAttribute="bottom" constant="8" id="fQy-sp-pg9"/>
+                        <constraint firstItem="W1V-Iv-4Id" firstAttribute="leading" secondItem="O7Q-hs-wxj" secondAttribute="leading" id="gR1-zA-2iH"/>
+                        <constraint firstItem="YWr-S3-eVh" firstAttribute="top" secondItem="W1V-Iv-4Id" secondAttribute="bottom" constant="26" id="hYx-NU-4tl"/>
                         <constraint firstAttribute="trailing" secondItem="YWr-S3-eVh" secondAttribute="trailing" constant="20" id="oFG-PJ-pb9"/>
                         <constraint firstItem="YWr-S3-eVh" firstAttribute="leading" secondItem="O7Q-hs-wxj" secondAttribute="leading" constant="20" id="sYV-jA-MdI"/>
                         <constraint firstItem="gwC-0S-how" firstAttribute="top" secondItem="FXL-3N-gv6" secondAttribute="bottom" constant="8" id="t1T-iv-3ID"/>

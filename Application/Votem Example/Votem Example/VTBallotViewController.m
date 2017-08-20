@@ -8,6 +8,7 @@
 
 #import "VTBallotViewController.h"
 #import "UIFont+VTFonts.h"
+#import "VTRouter.h"
 #import "VTTableViewCell.h"
 #import "VTTextEntryTableViewCell.h"
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *ballotMeasureSubtitle;
 @property (strong, nonatomic) IBOutlet UILabel *ballotMeasureNotesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ballotMeasureInstructionsLabel;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *actionBarButtonItem;
 @end
 
 @implementation VTBallotViewController
@@ -28,10 +30,6 @@
     self.ballotMeasureTableView.dataSource = self;
     [VTBallotViewController registerTableViewCells:self.ballotMeasureTableView];
     
-    if (self.ballot != nil) {
-        [self configureViewForBallot];
-    }
-    
     // Reload our data source!
     [self.ballotMeasureTableView reloadData];
     
@@ -41,9 +39,12 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setToolbarHidden:NO animated:YES];
+    if (self.ballot != nil) {
+        [self configureViewForBallot];
+    }
+
     if (self.ballot && self.contest != nil) {
         [self configureToolbar];
     }
@@ -207,37 +208,23 @@
     self.navigationController.toolbar.translucent = YES;
     
     // Create our buttons
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStylePlain target:nil action:nil];
-    leftItem.tintColor = [UIColor whiteColor];
-    UIBarButtonItem *spacerLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:nil action:nil];
-    rightItem.tintColor = [UIColor whiteColor];
-    UIBarButtonItem *spacerRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     
     NSNumber *completed = (NSNumber*)contestStatus[@"completed"];
     NSNumber *avaialable = (NSNumber*)contestStatus[@"available"];
     NSNumber *completedBool = (NSNumber*)contestStatus[@"isComplete"];
-    BOOL completedValue = completedBool.boolValue;
     
-    // Create the submit/completed string
-    NSString *submitString = [NSString stringWithFormat:@"%zd of %zd Completed", completed.integerValue, avaialable.integerValue];
-    if (completedValue) {
-        submitString = @"Complete and Submit";
+    NSString *barButtonString = @"Complete and Submit";
+    NSString *title = [NSString stringWithFormat:@"%zd of %zd Completed", completed.integerValue, avaialable.integerValue];
+    NSInteger nextBallotIndex = [self.contest.availableBallots indexOfObject:self.ballot] + 1;
+    
+    if (nextBallotIndex <= self.contest.availableBallots.count - 1) {
+        barButtonString = @"Next";
     }
     
-    // Create the submit item
-    UIBarButtonItem *submitItem = [[UIBarButtonItem alloc] initWithTitle:submitString style:UIBarButtonItemStylePlain target:nil action:nil];
-
-    if (!completedBool) {
-        submitItem.tintColor = [UIColor colorWithWhite:.90 alpha:1.0];
-        submitItem.enabled = NO;
-    } else {
-        submitItem.tintColor = [UIColor whiteColor];
-        submitItem.enabled = YES;
-    }
-    
-    NSArray<UIBarButtonItem*> *barButtonItems = @[leftItem, spacerLeft, submitItem, spacerRight, rightItem];
-    [self.navigationController.toolbar setItems:barButtonItems animated:YES];
+    self.title = title;
+    [self.actionBarButtonItem setTitle:barButtonString];
+    self.actionBarButtonItem.target = self;
+    self.actionBarButtonItem.action = @selector(handleActionButtonPress:);
 }
 
 - (VTTextEntryTableViewCell *)textEntryCellForTextField:(UITextField*)textField {
@@ -279,5 +266,45 @@
     [self.ballotMeasureTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
     [self.ballotMeasureTableView endUpdates];
 }
+
+- (void)handleActionButtonPress:(UIBarButtonItem*)sender {
+    NSInteger ballotIndex = [self.contest.availableBallots indexOfObject:self.ballot];
+    if (ballotIndex < self.contest.availableBallots.count - 1) {
+        [self showNextBallot];
+    } else {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Submit your selections" message:@"Continuing will submit your selections. Would you like to review all ballots?" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *submitAction = [UIAlertAction actionWithTitle:@"No, I want to submit my selections now" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [self submit];
+        }];
+        UIAlertAction *reviewAction = [UIAlertAction actionWithTitle:@"Yes, I want to review my selections" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [self review];
+        }];
+        [alertController addAction:reviewAction];
+        [alertController addAction:submitAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
+
+- (void)submit {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)review {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)showNextBallot {
+    NSInteger nextBallotIndex = [self.contest.availableBallots indexOfObject:self.ballot] + 1;
+    if (nextBallotIndex <= self.contest.availableBallots.count) {
+        self.title = @"";
+        VTBallot *nextBallot = (VTBallot*)[self.contest.availableBallots objectAtIndex:nextBallotIndex];
+        VTBallotViewController *ballotViewController = [[VTBallotViewController alloc] initWithNibName:@"VTBallotViewController" bundle:nil];
+        ballotViewController.ballot = nextBallot;
+        ballotViewController.contest = self.contest;
+        [self.navigationController pushViewController:ballotViewController animated:YES];
+    }
+}
+
 
 @end
