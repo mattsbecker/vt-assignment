@@ -23,7 +23,7 @@
 
 - (void)fetchData {
     self.isLoading = YES;
-    self.loadedData = @[[NSArray arrayWithArray:self.contest.availableBallots]];
+    self.loadedData = @[[NSArray arrayWithArray:self.contest.availableBallots], kVTContestSubmitRow];
     self.isLoading = NO;
     [self notifiyDelegateDataLoaded:self.loadedData];
 }

@@ -19,6 +19,9 @@
     VTContestsViewCoordinator *coordinator = [[VTContestsViewCoordinator alloc] init];
     VTContestsTableViewController *vc = [[VTContestsTableViewController alloc] initWithCoordinator:coordinator];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    [UINavigationBar appearance].tintColor = [UIColor vt_highlightBrandColor];
+    UIBarButtonItem *closeModalItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:[VTRouter class] action:@selector(routeToSignIn:)];
+    [vc.navigationItem setRightBarButtonItem:closeModalItem];
     
     // Show the window and set it's root view controller
     [window makeKeyAndVisible];
@@ -29,10 +32,15 @@
     
 }
 
-+ (void)routeToSignIn {
++ (void)routeToSignIn:(id)sender {
     // Create a new window and navigation controller
     VTSignInViewController *vc = [[VTSignInViewController alloc] initWithNibName:@"VTSignInViewController" bundle:nil];
-    [[VTRouter navigationController] presentViewController:vc animated:NO completion:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    BOOL animated = NO;
+    if (sender != nil) {
+        animated = YES;
+    }
+    [[VTRouter navigationController] presentViewController:navigationController animated:animated completion:nil];
 }
 
 + (void)presentViewControllerModally:(UIViewController*)viewController {
@@ -80,6 +88,7 @@
 /**
  Dismisses an active modal view controller
  */
+
 + (void)dismissModalViewController {
     [[VTRouter rootViewController] dismissViewControllerAnimated:YES completion:nil];
 }

@@ -25,6 +25,11 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -37,18 +42,36 @@
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier] forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.contentTextLabel.text = placeholderString;
-    cell.contentDetailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CONTESTS.CONTEST_END_DATE", @"Contest ends at string"), [objectForRow.endDate vt_dateAsDayMonthYearString]];
+    if (!objectForRow.completed) {
+        cell.contentDetailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CONTESTS.CONTEST_END_DATE", @"Contest ends at string"), [objectForRow.endDate vt_dateAsDayMonthYearString]];
+    } else {
+        cell.contentDetailTextLabel.text = @"Completed";
+    }
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    VTContest *objectForRow = (VTContest*)[self objectForRowAtIndexPath:indexPath];
+    // If the contest has been completed, don't allow the user to reenter
+    if (!objectForRow.completed) {
+        return YES;
+    }
+    return NO;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     VTContest *objectForRow = (VTContest*)[self objectForRowAtIndexPath:indexPath];
+    // If the contest has been completed, don't allow the user to reenter
+    if (objectForRow.completed) {
+        return;
+    }
+    
     VTBallotTableViewCoordinator *coordinator = [[VTBallotTableViewCoordinator alloc] initWithContest:objectForRow];
     VTBallotListTableViewController *vc = [[VTBallotListTableViewController alloc] initWithCoordinator:coordinator];
     vc.contest = objectForRow;
-    vc.title = objectForRow.name;
     [VTRouter pushViewController:vc];
 }
 

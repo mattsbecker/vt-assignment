@@ -10,6 +10,7 @@
 
 NSString const *kVTKeyboardTypeValueKeyboardTypeKey = @"kVTKeyboardTypeValueKeyboardTypeKey";
 NSString const *kVTKeyboardTypeValueSecureEntryKey = @"kVTKeyboardTypeValueSecureEntryKey";
+NSString const *kVTContestSubmitRow = @"VTContests.row.submit";
 
 @interface VTTableViewCoordinator()
 

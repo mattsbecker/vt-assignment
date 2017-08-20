@@ -10,6 +10,7 @@
 
 extern NSString const *kVTKeyboardTypeValueKeyboardTypeKey;
 extern NSString const *kVTKeyboardTypeValueSecureEntryKey;
+extern NSString const *kVTContestSubmitRow;
 
 @class VTTableViewCoordinator;
 

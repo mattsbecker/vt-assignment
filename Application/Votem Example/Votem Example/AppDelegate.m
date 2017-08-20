@@ -22,7 +22,7 @@
     _loggedIn = NO;
     
     if (!_loggedIn) {
-        [VTRouter routeToSignIn];
+        [VTRouter routeToSignIn:nil];
     }
     return YES;
 }

@@ -32,14 +32,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    VTBallot *objectForRow = (VTBallot *)[self objectForRowAtIndexPath:indexPath];
-    NSString *placeholderString = [NSString stringWithFormat:@"%@ - %@ ballot(s)", objectForRow.title, @(objectForRow.type)];
-    
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier]];
+    if (indexPath.section == 1) {
+        [self.contest evaluateContestCompletionStatus];
+        if ([[self objectForRowAtIndexPath:indexPath] isEqual:kVTContestSubmitRow]) {
+            cell.contentTextLabel.text = @"Submit";
+            cell.contentTextLabel.font = [UIFont vt_standardContentFont];
+            cell.contentTextLabel.textColor = self.contest.completed ? [UIColor vt_highlightBrandColor] : [UIColor lightGrayColor];
+            cell.contentDetailTextLabel.text = @"";
+            return cell;
+        }
+    }
+
+    VTBallot *objectForRow = (VTBallot *)[self objectForRowAtIndexPath:indexPath];
+    NSString *placeholderString = [NSString stringWithFormat:@"%@", objectForRow.title];
+    
     cell.tintColor = [UIColor vt_highlightBrandColor];
     cell.contentTextLabel.numberOfLines = 0;
     cell.contentTextLabel.text = placeholderString;
-    cell.contentDetailTextLabel.text = objectForRow.instructions;
+    cell.contentDetailTextLabel.text = @"";
     cell.contentDetailTextLabel.numberOfLines = 0;
     
     if (objectForRow.selections.count > 0) {
@@ -50,6 +61,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        [self.contest evaluateContestCompletionStatus];
+        if (!self.contest.completed) {
+            return;
+        } else {
+            UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Your selections have been submitted!" message:@"Your selections have been submitted. Thank you for participating in this contest." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
+            [controller addAction:action];
+            [self.navigationController presentViewController:controller animated:YES completion:nil];
+            return;
+        }
+    }
     VTBallot *objectForRow = (VTBallot *)[self objectForRowAtIndexPath:indexPath];
     VTBallotViewController *vc = [[VTBallotViewController alloc] initWithNibName:@"VTBallotViewController" bundle:nil];
     vc.contest = self.contest;
@@ -60,7 +85,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80.0;
+    return 44.0;
 }
 
 + (void)registerTableViewCells:(UITableView*)tableView {

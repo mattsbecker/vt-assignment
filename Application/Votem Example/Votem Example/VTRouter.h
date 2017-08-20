@@ -19,7 +19,7 @@ Create the application root navigation controller and initial contest view contr
 /**
  Presents the sign in view controller in a root navigation controller
  */
-+ (void)routeToSignIn;
++ (void)routeToSignIn:(id)sender;
 /**
  Presents a new view controller modally. The provided view controller will be inserted into a navigation controller for convenience.
  @parameter viewController A UIViewController that should be presented modally

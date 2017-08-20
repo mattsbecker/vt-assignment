@@ -168,6 +168,13 @@
     [self.ballotMeasureTableView reloadData];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 60.0;
+    } else {
+        return 44.0;
+    }
+}
 # pragma mark --- Instance Methods ---
 
 # pragma mark --- Private Methods ---
@@ -211,7 +218,6 @@
     
     NSNumber *completed = (NSNumber*)contestStatus[@"completed"];
     NSNumber *avaialable = (NSNumber*)contestStatus[@"available"];
-    NSNumber *completedBool = (NSNumber*)contestStatus[@"isComplete"];
     
     NSString *barButtonString = @"Complete and Submit";
     NSString *title = [NSString stringWithFormat:@"%zd of %zd Completed", completed.integerValue, avaialable.integerValue];

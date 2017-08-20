@@ -24,14 +24,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vt_logo" translatesAutoresizingMaskIntoConstraints="NO" id="b5a-2M-0qj">
-                    <rect key="frame" x="112" y="44" width="150" height="150"/>
+                    <rect key="frame" x="112" y="60" width="150" height="150"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="3cN-Hc-2r9"/>
                         <constraint firstAttribute="height" constant="150" id="V1O-cY-hX9"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v7-kJ-KvH">
-                    <rect key="frame" x="62.5" y="210" width="250" height="21"/>
+                    <rect key="frame" x="62.5" y="226" width="250" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="kWe-bL-wUw"/>
                     </constraints>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hq1-mC-4Wd" customClass="JVFloatLabeledTextField">
-                    <rect key="frame" x="62.5" y="275" width="250" height="44"/>
+                    <rect key="frame" x="62.5" y="291" width="250" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="dTX-VC-zAL"/>
                     </constraints>
@@ -49,7 +49,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vs8-c7-10u" customClass="JVFloatLabeledTextField">
-                    <rect key="frame" x="62.5" y="402" width="250" height="44"/>
+                    <rect key="frame" x="62.5" y="418" width="250" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="OkU-Oo-i4S"/>
                     </constraints>
@@ -58,13 +58,20 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2B-yH-t3V">
-                    <rect key="frame" x="62.5" y="343" width="250" height="21"/>
+                    <rect key="frame" x="62.5" y="359" width="250" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdw-Rd-I4v">
+                    <rect key="frame" x="220" y="483" width="127" height="30"/>
+                    <state key="normal" title="Create an Account"/>
+                    <connections>
+                        <action selector="createAccountButtonPress:" destination="-1" eventType="touchUpInside" id="ALx-30-UCG"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9U5-TL-Oj7">
-                    <rect key="frame" x="164" y="454" width="46" height="30"/>
+                    <rect key="frame" x="70" y="483" width="47" height="30"/>
                     <state key="normal" title="Sign In"/>
                     <connections>
                         <action selector="signInButtonPress:" destination="-1" eventType="touchUpInside" id="t5P-6A-Z33"/>
@@ -77,7 +84,9 @@
                 <constraint firstItem="Vs8-c7-10u" firstAttribute="leading" secondItem="hq1-mC-4Wd" secondAttribute="leading" id="5Hv-Pm-XHM"/>
                 <constraint firstItem="b5a-2M-0qj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="6kr-JA-2jp"/>
                 <constraint firstItem="Vs8-c7-10u" firstAttribute="top" secondItem="C2B-yH-t3V" secondAttribute="bottom" constant="38" id="CO8-Jc-ZZM"/>
-                <constraint firstItem="9U5-TL-Oj7" firstAttribute="centerX" secondItem="C2B-yH-t3V" secondAttribute="centerX" id="TXc-Te-EuC"/>
+                <constraint firstItem="xdw-Rd-I4v" firstAttribute="top" secondItem="Vs8-c7-10u" secondAttribute="bottom" constant="24" id="FJN-uN-rhU"/>
+                <constraint firstItem="9U5-TL-Oj7" firstAttribute="leading" secondItem="Vs8-c7-10u" secondAttribute="leading" id="LLF-g9-64e"/>
+                <constraint firstItem="xdw-Rd-I4v" firstAttribute="trailing" secondItem="Vs8-c7-10u" secondAttribute="trailing" id="OS9-GG-8gg"/>
                 <constraint firstItem="7v7-kJ-KvH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tfu-MR-Jlz"/>
                 <constraint firstItem="hq1-mC-4Wd" firstAttribute="trailing" secondItem="7v7-kJ-KvH" secondAttribute="trailing" id="UGk-rM-DBL"/>
                 <constraint firstItem="hq1-mC-4Wd" firstAttribute="leading" secondItem="7v7-kJ-KvH" secondAttribute="leading" id="ZTC-P9-f3t"/>
