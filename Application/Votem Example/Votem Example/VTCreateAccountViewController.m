@@ -32,7 +32,6 @@
     NSString *placeholderString = [self.coordinator displayStringForValue:key];
 
     VTTextEntryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTextEntryTableViewCell vt_reuseIdentifier] forIndexPath:indexPath];
-    //NSString *placeholderString = [self.coordinator registrationKeyForValue:(NSUInteger)[super objectForRowAtIndexPath:indexPath]];
     cell.textField.placeholder = placeholderString;
     return cell;
 }

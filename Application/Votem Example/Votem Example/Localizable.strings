@@ -26,6 +26,8 @@
 
 "CONTESTS.SELECT_CONTEST_TITLE" = "Available contests";
 "CONTESTS.CONTEST_END_DATE" = "Ends at %@";
+
+"BALLOT.ADD_WRITE_IN" = "Add write in";
 "SETTINGS.TITLE" = "Settings";
 "SETTINGS.TOGGLE_TOUCHID" = "Enable TouchID";
 "SETTINGS.TOGGLE_NOTIFICATIONS" = "Enable Notifications";

@@ -17,10 +17,10 @@
                     subTitle:(NSString *)subtitle
                 instructions:(NSString *)instructions
                   ballotNote:(NSString *)ballotNote
-                     options:(NSArray *)options {
+                     options:(NSArray *)options
+               allowsWriteIn:(BOOL)allowsWriteIn {
     
     VTBallot *ballot;
-    
     if (type == kVTBallotTypeSelectOne) {
         VTSelectOneBallot *selectOneBallot = [[VTSelectOneBallot alloc] init];
         ballot = selectOneBallot;
@@ -49,7 +49,7 @@
     if (ballotNote) {
         ballot.ballotNote = ballotNote;
     }
-    
+    ballot.allowsWriteIn = allowsWriteIn;
     return ballot;
 
 }

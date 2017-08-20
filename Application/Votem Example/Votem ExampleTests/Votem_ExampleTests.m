@@ -115,7 +115,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCreateNamedContestOneBallot {
     NSString *contestName = @"One Ballot Contest";
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotTitle ballotNote:nil options:[self chooseOneBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotTitle ballotNote:nil options:[self chooseOneBallotOptions] allowsWriteIn:NO];
     
 
     VTContest *contest = [self contestWithName:contestName];
@@ -139,7 +139,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCrateRankedChoiceBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTRankedChoiceBallot *rankedChoiceBallot = (VTRankedChoiceBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeRankedChoice title:self.rankedChoiceBallotTitle subTitle:self.rankedChoiceBallotSubtitle instructions:self.rankedChoiceBallotInstructions ballotNote:nil options:[self rankedChoiceBallotOptions]];
+    VTRankedChoiceBallot *rankedChoiceBallot = (VTRankedChoiceBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeRankedChoice title:self.rankedChoiceBallotTitle subTitle:self.rankedChoiceBallotSubtitle instructions:self.rankedChoiceBallotInstructions ballotNote:nil options:[self rankedChoiceBallotOptions] allowsWriteIn:NO];
     
     XCTAssertNotNil(rankedChoiceBallot);
     XCTAssertEqualObjects(@(rankedChoiceBallot.type), @(kVTBallotTypeRankedChoice));
@@ -155,7 +155,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCrateSelectOneBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions] allowsWriteIn:NO];
     
     XCTAssertNotNil(selectOneBallot);
     XCTAssertEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectOne));
@@ -170,7 +170,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCastVoteForSelectOneBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneBallotTitle subTitle:self.selectOneBallotSubtitle instructions:self.selectOneBallotInstructions ballotNote:nil options:[self chooseOneBallotOptions] allowsWriteIn:NO];
     
     XCTAssertNotNil(selectOneBallot);
     XCTAssertEqualObjects(@(selectOneBallot.type), @(kVTBallotTypeSelectOne));
@@ -193,7 +193,7 @@ NSInteger const kVTTestableContestId = 100;
 
 
 - (void)testCanCrateSelectOneWithNoteBallot {
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneWithNoteBallotTitle subTitle:self.selectOneWithNoteBallotSubtitle instructions:self.selectOneWithNoteBallotInstructions ballotNote:self.selectOneWithNoteBallotNote options:[self chooseOneWithNoteBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:self.selectOneWithNoteBallotTitle subTitle:self.selectOneWithNoteBallotSubtitle instructions:self.selectOneWithNoteBallotInstructions ballotNote:self.selectOneWithNoteBallotNote options:[self chooseOneWithNoteBallotOptions] allowsWriteIn:NO];
     
     // Test to ensure the ballot is successfully created and is of the correct type
     XCTAssertNotNil(selectOneBallot);
@@ -210,7 +210,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCreateSelectTwoBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions]];
+    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions] allowsWriteIn:NO];
     XCTAssertNotNil(selectTwoBallot);
     XCTAssertEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectTwo));
     XCTAssertNotEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectOne));
@@ -223,7 +223,7 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testCanCastVoteForSelectTwoBallot {
     // Test to ensure the ballot is successfully created and is of the correct type
-    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions]];
+    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:self.selectTwoBallotTitle subTitle:nil instructions:self.selectTwoBallotInstructions ballotNote:nil options:[self chooseTwoBallotOptions] allowsWriteIn:NO];
     XCTAssertNotNil(selectTwoBallot);
     XCTAssertEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectTwo));
     XCTAssertNotEqualObjects(@(selectTwoBallot.type), @(kVTBallotTypeSelectOne));
@@ -253,13 +253,13 @@ NSInteger const kVTTestableContestId = 100;
 
 - (void)testNSDateFormattedAsDayMonthYear {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
-    NSString *dateAsString = [date dateAsDayMonthYearString];
+    NSString *dateAsString = [date vt_dateAsDayMonthYearString];
     XCTAssertTrue([dateAsString isEqualToString:@"31-12-1969"]);
 }
 
 - (void)testNSDateFormattedAsDayMonthYearTime {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
-    NSString *dateAsString = [date dateAsDayMonthYearTimeString];
+    NSString *dateAsString = [date vt_dateAsDayMonthYearTimeString];
     XCTAssertTrue([dateAsString isEqualToString:@"31-12-1969 7:00 PM"]);
     
 }

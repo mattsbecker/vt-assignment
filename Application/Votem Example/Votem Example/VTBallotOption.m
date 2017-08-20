@@ -10,4 +10,11 @@
 
 @implementation VTBallotOption
 
+- (void)updateText:(NSString *)text {
+    // No editing is allowed unless this ballot option is a write-in
+    if (!self.writeIn) {
+        return;
+    }
+    self.title = text;
+}
 @end

@@ -16,5 +16,7 @@
                     subTitle:(NSString *)subtitle
                 instructions:(NSString *)instructions
                   ballotNote:(NSString *)ballotNote
-                     options:(NSArray *)options;
+                     options:(NSArray *)options
+               allowsWriteIn:(BOOL)allowsWriteIn;
+
 @end

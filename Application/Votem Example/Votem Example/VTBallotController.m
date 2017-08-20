@@ -49,8 +49,6 @@
 }
 
 - (NSArray<VTBallotOption*>*)handleSelectTwoSelection:(VTBallotOption *)selection {
-    __weak VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)self.ballot;
-    
     return self.ballot.selections;
     
     

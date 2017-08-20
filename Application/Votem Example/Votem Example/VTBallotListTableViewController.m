@@ -37,10 +37,10 @@
     
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier]];
     cell.tintColor = [UIColor vt_highlightBrandColor];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = placeholderString;
-    cell.detailTextLabel.text = objectForRow.instructions;
-    cell.detailTextLabel.numberOfLines = 0;
+    cell.contentTextLabel.numberOfLines = 0;
+    cell.contentTextLabel.text = placeholderString;
+    cell.contentDetailTextLabel.text = objectForRow.instructions;
+    cell.contentDetailTextLabel.numberOfLines = 0;
     
     if (objectForRow.selections.count > 0) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;

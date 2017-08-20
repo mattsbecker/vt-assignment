@@ -59,7 +59,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier] forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [self objectForRowAtIndexPath:indexPath]];
     return cell;
 }
 

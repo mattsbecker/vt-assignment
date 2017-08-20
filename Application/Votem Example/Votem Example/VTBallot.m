@@ -21,6 +21,7 @@ NSString const *kVTBallotSelectionValueKey = @"selections";
     self = [super init];
     self.submittable = NO;
     self.enabled = YES;
+    self.allowsWriteIn = NO;
     return self;
 }
 
@@ -32,7 +33,19 @@ NSString const *kVTBallotSelectionValueKey = @"selections";
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
 }
 
+- (void)moveSelection:option fromPosition:(NSInteger)fromPostition toPosition:(NSInteger)toPosition {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+- (void)prepareForWriteInAdditionWithText:(NSString *)text {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
 - (BOOL)evaluateSubmittable {
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
+}
+
+- (void)removeWriteInSelection:(VTBallotOption*)option {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:[NSString stringWithFormat:@"%@ must be overridden by a subclass", NSStringFromSelector(_cmd)] userInfo:nil];
 }
 

@@ -36,8 +36,8 @@
     
     VTTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[VTTableViewCell vt_reuseIdentifier] forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = placeholderString;
-    cell.detailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CONTESTS.CONTEST_END_DATE", @"Contest ends at string"), [objectForRow.endDate dateAsDayMonthYearString]];
+    cell.contentTextLabel.text = placeholderString;
+    cell.contentDetailTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CONTESTS.CONTEST_END_DATE", @"Contest ends at string"), [objectForRow.endDate vt_dateAsDayMonthYearString]];
     return cell;
 }
 

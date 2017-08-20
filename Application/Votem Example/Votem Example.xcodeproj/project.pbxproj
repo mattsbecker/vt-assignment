@@ -52,6 +52,7 @@
 		C9BA8EF81F47DF2B006F5B3C /* VTBallotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BA8EF61F47DF2B006F5B3C /* VTBallotViewController.xib */; };
 		C9BA8EFA1F47EEC3006F5B3C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BA8EF91F47EEC3006F5B3C /* QuartzCore.framework */; };
 		C9BA8F621F4898B5006F5B3C /* VTBallotController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8F611F4898B5006F5B3C /* VTBallotController.m */; };
+		C9BA8F651F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BA8F641F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		C9BA8EF91F47EEC3006F5B3C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9BA8F601F4898B5006F5B3C /* VTBallotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTBallotController.h; sourceTree = "<group>"; };
 		C9BA8F611F4898B5006F5B3C /* VTBallotController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VTBallotController.m; sourceTree = "<group>"; };
+		C9BA8F631F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+NSAttributedString_VTSizeUtils.h"; sourceTree = "<group>"; };
+		C9BA8F641F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+NSAttributedString_VTSizeUtils.m"; sourceTree = "<group>"; };
 		D52A9E6DFB47F1D81C19E813 /* Pods-Votem Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.release.xcconfig"; sourceTree = "<group>"; };
 		DF218CD0C551E97A5EE5C516 /* Pods-Votem Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Votem Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Votem Example/Pods-Votem Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E813339F1A9C86C3895C8669 /* libPods-Votem Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Votem Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				C984EE5A1F414E8500B9C832 /* UIColor+VTColors.h */,
+				C9BA8F631F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.h */,
+				C9BA8F641F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.m */,
 				C984EE5B1F414E8500B9C832 /* UIColor+VTColors.m */,
 				C984EE5D1F414F6900B9C832 /* UIFont+VTFonts.h */,
 				C984EE5E1F414F6900B9C832 /* UIFont+VTFonts.m */,
@@ -613,6 +618,7 @@
 				C9BA8F621F4898B5006F5B3C /* VTBallotController.m in Sources */,
 				C9BA8EC81F45406F006F5B3C /* VTContest.m in Sources */,
 				C9BA8EC51F453670006F5B3C /* VTContestsViewCoordinator.m in Sources */,
+				C9BA8F651F490A42006F5B3C /* NSAttributedString+NSAttributedString_VTSizeUtils.m in Sources */,
 				C984EE5C1F414E8500B9C832 /* UIColor+VTColors.m in Sources */,
 				C984EE2E1F3F92A100B9C832 /* Votem_Example.xcdatamodeld in Sources */,
 				C9BA8EE01F454871006F5B3C /* VTContestsTableViewController.m in Sources */,

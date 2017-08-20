@@ -12,5 +12,7 @@
 #import "UIFont+VTFonts.h"
 
 @interface VTTableViewCell : UITableViewCell
-
+@property (strong, nonatomic) IBOutlet UILabel *contentTextLabel;
+@property (strong, nonatomic) IBOutlet UILabel *contentDetailTextLabel;
+@property (strong, nonatomic) IBOutlet UILabel *positionTextLabel;
 @end

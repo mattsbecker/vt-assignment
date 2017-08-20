@@ -11,4 +11,8 @@
 @interface VTBallotOption : NSObject
 @property (nonatomic, assign) NSNumber *optionId;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, assign) BOOL writeIn;
+
+- (void)updateText:(NSString *)text;
+
 @end

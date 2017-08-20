@@ -12,15 +12,15 @@
 /**
  Returns an ISO 8601 formatted date string (yyyy-MM-dd'T'HH:mm:ss.SSS)
  */
-- (NSString *)dateAsISO8601String;
+- (NSString *)vt_dateAsISO8601String;
 
 /**
  Returns a day-month-year formatted date string
  */
-- (NSString *)dateAsDayMonthYearString;
+- (NSString *)vt_dateAsDayMonthYearString;
 
 /** 
  Returns a day-month-year formatted date string, with AM/PM time
  */
-- (NSString *)dateAsDayMonthYearTimeString;
+- (NSString *)vt_dateAsDayMonthYearTimeString;
 @end

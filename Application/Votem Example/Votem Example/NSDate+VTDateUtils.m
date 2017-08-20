@@ -10,17 +10,17 @@
 
 @implementation NSDate (VTDateUtils)
 
-- (NSString *)dateAsISO8601String {
+- (NSString *)vt_dateAsISO8601String {
     NSString *formatted = [self _dateStringWithFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS"];
     return formatted;
 }
 
-- (NSString *)dateAsDayMonthYearString {
+- (NSString *)vt_dateAsDayMonthYearString {
     NSString *formatted = [self _dateStringWithFormat:@"dd-MM-yyyy"];
     return formatted;
 }
 
-- (NSString *)dateAsDayMonthYearTimeString {
+- (NSString *)vt_dateAsDayMonthYearTimeString {
     NSString *formatted = [self _dateStringWithFormat:@"dd-MM-yyyy h:mm a"];
     return formatted;
 }

@@ -31,11 +31,12 @@
     VTContest *contest = [[VTContest alloc] init];
     contest.name = @"Federal and State Election";
 
-    VTSelectOneBallot *rankChoiceBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:@"For Fommander In Cream and Vice Ice" subTitle:@"Ranked Choice Voting (Instant Runoff)" instructions:@"Rank candidates in order of choice. Mark your favorite candidate as first choice, and then indicate your second and additional back-up choices in order of choice. You may rank as many candidates as you want." ballotNote:nil options:[self rankedChoiceBallotOptions]];
+    VTRankedChoiceBallot *rankChoiceBallot = (VTRankedChoiceBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeRankedChoice title:@"For Fommander In Cream and Vice Ice" subTitle:@"Ranked Choice Voting (Instant Runoff)" instructions:@"Rank candidates in order of choice. Mark your favorite candidate as first choice, and then indicate your second and additional back-up choices in order of choice. You may rank as many candidates as you want." ballotNote:nil options:[self rankedChoiceBallotOptions] allowsWriteIn:YES];
+    // Ranked choice allows ballot write-ins
 
-    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:@"For Cheif Dairy Queen" subTitle:@"Shall Justice Mint C. Chip of the Supreme Court of the State of Ice Create be retained in office for another term?" instructions:@"Select the checkbox before the word \"YES\" if you wish the official to remain in office. \nSelect the checkbox before the word \"NO\" if you do not wish the official to remain in office" ballotNote:nil options:[self chooseOneBallotOptions]];
+    VTSelectOneBallot *selectOneBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:@"For Cheif Dairy Queen" subTitle:@"Shall Justice Mint C. Chip of the Supreme Court of the State of Ice Create be retained in office for another term?" instructions:@"Select the checkbox before the word \"YES\" if you wish the official to remain in office. \nSelect the checkbox before the word \"NO\" if you do not wish the official to remain in office" ballotNote:nil options:[self chooseOneBallotOptions] allowsWriteIn:NO];
 
-    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:@"For State Rep. District M&M" subTitle:nil instructions:@"Vote for two" ballotNote:nil options:[self chooseTwoBallotOptions]];
+    VTSelectTwoBallot *selectTwoBallot = (VTSelectTwoBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectTwo title:@"For State Rep. District M&M" subTitle:nil instructions:@"Vote for two" ballotNote:nil options:[self chooseTwoBallotOptions] allowsWriteIn:NO];
 
     
     contest.contestId = @(100);
@@ -47,7 +48,7 @@
     VTContest *countyElection = [[VTContest alloc] init];
     countyElection.name = @"County Election";
 
-    VTSelectOneBallot *selectOneWithNoteBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:@"Ballot Issue" subTitle:@"Constiutional Initiative No. 116" instructions:@"Vote by selecting one checkbox" ballotNote:@"Make Vanilla (Over Chocolate) the official best flavor. \nThis is a fiercely debated topic and CI - 116 would offically enumerate in writted legislative text in perpetuity which flavor has favor – namely vanilla is better, unequivocally, then chocolate." options:[self chooseOneWithNoteBallotOptions]];
+    VTSelectOneBallot *selectOneWithNoteBallot = (VTSelectOneBallot*)[VTBallotFactory ballotWithType:kVTBallotTypeSelectOne title:@"Ballot Issue" subTitle:@"Constiutional Initiative No. 116" instructions:@"Vote by selecting one checkbox" ballotNote:@"Make Vanilla (Over Chocolate) the official best flavor. \nThis is a fiercely debated topic and CI - 116 would offically enumerate in writted legislative text in perpetuity which flavor has favor – namely vanilla is better, unequivocally, then chocolate." options:[self chooseOneWithNoteBallotOptions] allowsWriteIn:NO];
     countyElection.contestId = @(100);
     countyElection.startDate = [NSDate date];
     countyElection.endDate = [NSDate dateWithTimeIntervalSinceNow:1440];
