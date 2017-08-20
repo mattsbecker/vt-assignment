@@ -1,5 +1,5 @@
 ## Coding Assignment
-This repository contains an example iOS application and supporting documentation for a product-related coding exercise for Votem.
+This repository contains an example iOS application and supporting documentation for a product-related coding exercise.
 
 ## Contents of this repository
 * Documents - Contains files relating to the requirements of the product exercise; including initial specification and my requirements for fulfilling those specifications.
